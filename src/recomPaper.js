@@ -42,13 +42,10 @@ export default function RecomPaper() {
             {/* From this article */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <table>
-                    <tr>
-                        <td>
-                          Start Following Tags To View Articles Curated For You.
-                        </td>
-                    </tr>
-                </table>
+                  <p>
+                  Start Following Tags To View Articles Curated For You.
+                  </p>
+                
               </Paper>
             </Grid>
           </Grid>

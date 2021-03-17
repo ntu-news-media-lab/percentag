@@ -4,6 +4,7 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Tags from './tags';
 import Recommend from './recommend';
+import ApiCall from './apiCall';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
     this.setState({
       tab: value
     });
-    console.log(this.state.tab);
+    
   }
   
   
@@ -58,6 +59,8 @@ export default class App extends React.Component {
             {showtab}
           </div>
         </div>
+        <ApiCall>
+        </ApiCall>
       </div> 
       </React.Fragment>
     );

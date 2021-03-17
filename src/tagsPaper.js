@@ -40,13 +40,9 @@ export default function TagsPaper() {
             {/* From this article */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <table>
-                    <tr>
-                        <td>
-                            None Yet. Start Following Tags!
-                        </td>
-                    </tr>
-                </table>
+                <p>
+                None Yet. Start Following Tags!
+                </p>
               </Paper>
             </Grid>
           </Grid>
