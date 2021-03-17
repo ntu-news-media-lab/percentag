@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "version": "0.0.1",
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "description": "Sample application showing how to create an extension with Create React App",
+  "short_name": "Tag",
+  "name": "Percentag",
+  "description": "Tagging your next read",
   "browser_action": {
     "default_title": "CRE",
     "default_popup": "popup.html"
@@ -18,9 +18,9 @@
     }
   ],
   "icons": {
-    "16": "img/icon-16.png",
-    "48": "img/icon-48.png",
-    "128": "img/icon-128.png"
+    "16": "logo16.png",
+    "48": "logo48.png",
+    "128": "logo128.png"
   },
   "options_page": "options.html",
   "permissions": ["activeTab"],
