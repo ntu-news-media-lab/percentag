@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'row',
-    
   },
   fixedHeight: {
     height: 240,

@@ -1,18 +1,15 @@
-/*global chrome*/
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-
-
+import TaggedCards from './taggedCards';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  }, 
+  },
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
@@ -29,35 +26,42 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function getChromeStoragefunction() {
-  chrome.storage.sync.get(['Tag'], function (result) {
-    console.log('Value currently is ' + result.key);
-  });
-}
 
-export default function TagsPaper() {
+export default function TagsPaper(props) {
+  let showTagCards;
   const classes = useStyles();
-  // let showSavedTags = getChromeStoragefunction();
-  
+  if (props.savedTagArray[0] === "") {
+    showTagCards = <p>
+      None Yet. Start Following Tags!
+    </p>
+  }
+  else{
+    showTagCards = <span></span>
+  }
+
+
   return (
     <div className={classes.root}>
-      <main className={classes.content}>
-        
+      
+
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
           
+
             {/* From this article */}
-            <Grid item xs={12}>
+            <Grid item xs={11}>
               <Paper className={classes.paper}>
-                <p>
-                None Yet. Start Following Tags!
-                </p>
+                {showTagCards}
+                {props.savedTagArray.map((e)=>{
+                  
+                  return <div key={e} ><TaggedCards tagName={e}/> <br/></div>
+                })}
+               
               </Paper>
             </Grid>
-          </Grid>
-         
+          
+
         </Container>
-      </main>
+      
     </div>
   );
 }
