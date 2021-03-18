@@ -20,7 +20,7 @@ export default class Tags extends Component {
         this.setState({
             tags: e
         })
-        
+        console.log(e)
     }
 
     render() {

@@ -8,3 +8,8 @@ export function messageInBackground() {
   console.log('just do not forget, I cannot render anything !');
 }
 
+export function getCurrentUrl(){
+  
+  
+}
+
