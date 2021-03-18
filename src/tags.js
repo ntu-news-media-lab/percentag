@@ -39,7 +39,7 @@ export default class Tags extends Component {
                 <b>
                     From this article
                 </b>
-                {/* pass Tag array name here*/}
+                
                 <CurrentTagPaper tagArray={this.state.tags} />
                 <ApiCall getTags={this.getTags}  tags={this.state.tags}/>
             </div>

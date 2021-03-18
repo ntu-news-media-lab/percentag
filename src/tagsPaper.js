@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -27,9 +28,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+function getChromeStoragefunction() {
+  chrome.storage.sync.get(['Tag'], function (result) {
+    console.log('Value currently is ' + result.key);
+  });
+}
+
 export default function TagsPaper() {
   const classes = useStyles();
-
+  // let showSavedTags = getChromeStoragefunction();
+  
   return (
     <div className={classes.root}>
       <main className={classes.content}>
