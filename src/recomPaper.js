@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 
 
 
-const drawerWidth = 240;
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

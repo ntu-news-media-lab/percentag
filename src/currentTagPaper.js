@@ -21,20 +21,11 @@ function Copyright() {
     </Typography>
   );
 }
-const drawerWidth = 240;
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  },
-  drawerPaper: {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
   },
   
   container: {
@@ -45,38 +36,40 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     display: 'flex',
     overflow: 'auto',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    
   },
   fixedHeight: {
     height: 240,
   },
 }));
 
-export default function CurrentTagPaper() {
+export default function CurrentTagPaper(props) {
   const classes = useStyles();
  
  
 
   return (
     <div className={classes.root}>
-      <main className={classes.content}>
-        
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-          
             {/* From this article */}
-            <Grid item xs={12}>
+            <Grid item xs={11}>
               <Paper className={classes.paper}>
-                <TagCards></TagCards>
+              {/* generate all tags cards here */}
+              <div >
+                {props.tagArray.map((e)=>{
+                  
+                  return <div key={e} ><TagCards tagName={e}/> <br/></div>
+                })}
+              </div>
               </Paper>
             </Grid>
-          </Grid>
+          
           <Box pt={4}>
             <Copyright />
           </Box>
         
         </Container>
-      </main>
     </div>
   );
 }

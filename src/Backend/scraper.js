@@ -20,5 +20,3 @@ const getPostTitles = async () => {
 	}
 };
 
-getPostTitles()
-.then((postTitles) => console.log(postTitles));

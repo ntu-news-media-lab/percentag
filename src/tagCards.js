@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   details: {
     display: 'flex',
     flexDirection: 'column',
+    overflow: 'auto'
   },
   content: {
     flex: '1 0 auto',
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: 14,
+    overflow: 'auto'
   },
   addIcon: {
     height: 12,
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MediaControlCard() {
+export default function MediaControlCard(props) {
   const classes = useStyles();
   
 
@@ -40,7 +42,7 @@ export default function MediaControlCard() {
       <div className={classes.details}>
         <div className={classes.controls}>
         <Typography className={classes.title} color="textSecondary">
-            Apple
+            {props.tagName}
             {/* Pass in props here */}
           </Typography>
           <IconButton aria-label="play/pause">
