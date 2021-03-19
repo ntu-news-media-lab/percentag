@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 let url = 'https://www.dealstreetasia.com/stories/tvm-capital-healthcare-2-232270/'
 
-const getPostTitles = async () => {
+//get tags from DSA news web
+const getPostTags = async () => {
     try {
         const { data } = await axios.get(
             url
@@ -30,13 +31,30 @@ const getPostTitles = async () => {
     }
 };
 
+//get The entire chunk of text from DSA
+const getPostText = async () =>{
+    try{
+        const {data} = await axios.get(
+            url
+        );
+        const $ = cheerio.load(data);
+        const postText = [];
+        
+    }
+    catch(error){
+        throw error
+    }
+}
+
+app.get('/api/getTags', (req, res) => {
+    res.send({ express: ['stripe'] });
+  });
 
 
 app.post('/api/scrap', (req, res) => {
-    console.log(req.body.url)
     url = req.body.url
-    getPostTitles()
-    .then((postTitles) => { console.log(postTitles), tags = postTitles });
+    getPostTags()
+    .then((postTags) => {tags = postTags });
     res.send({ express: tags });
 });
 

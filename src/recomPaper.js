@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-
-
-
+import RecommendCards from './recommendCards';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,14 +25,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecomPaper() {
+export default function RecomPaper(props) {
+  let showRecommend;
   const classes = useStyles();
- 
+  if (props.recommendation[0].title === "") {
+    showRecommend = <i>
+     Start Following Tags To View Articles Curated For You.
+    </i>
+  }
+  else{
+    showRecommend = <br/>
+  }
  
 
   return (
     <div className={classes.root}>
-      <main className={classes.content}>
+      
         
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
@@ -42,16 +48,17 @@ export default function RecomPaper() {
             {/* From this article */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                  <p>
-                  Start Following Tags To View Articles Curated For You.
-                  </p>
-                
+                  {showRecommend}
+                  {props.recommendation.map((e)=>{
+                  
+                  return <div key={e.title} ><RecommendCards recoCardTitle={e.title} recoCardImg={e.img} recoCardDate={e.date} recoCardMatch={e.match}/> <br/></div>
+                })}
+                  
               </Paper>
             </Grid>
           </Grid>
          
         </Container>
-      </main>
     </div>
   );
 }
