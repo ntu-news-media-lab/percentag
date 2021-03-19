@@ -11,11 +11,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column',
@@ -43,7 +43,7 @@ export default function RecomPaper(props) {
       
         
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
+          <Grid container spacing={1}>
           
             {/* From this article */}
             <Grid item xs={12}>

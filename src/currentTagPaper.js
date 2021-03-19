@@ -27,16 +27,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: 'auto'
   },
   fixedHeight: {
     height: 240,
@@ -55,12 +56,12 @@ export default function CurrentTagPaper(props) {
             <Grid item xs={11}>
               <Paper className={classes.paper}>
               {/* generate all tags cards here */}
-              <div >
+              
                 {props.tagArray.map((e)=>{
                   
-                  return <div key={e} ><TagCards tagName={e}/> <br/></div>
+                  return <div key={e} style={{padding: 5}} ><TagCards tagName={e}/></div>
                 })}
-              </div>
+              
               </Paper>
             </Grid>
           

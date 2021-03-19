@@ -9,30 +9,17 @@ import { CardContent } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        maxWidth: 75,
+        maxWidth: 100,
         maxHeight: 50
-    },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'auto'
     },
     content: {
         flex: '1 0 auto',
-    },
-    controls: {
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: theme.spacing(1),
     },
     title: {
         fontSize: 12,
         overflow: 'auto'
     },
-    addIcon: {
-        height: 12,
-        width: 12,
-    },
+  
 }));
 
 
@@ -64,14 +51,10 @@ export default function TaggedCards(props) {
     return (
         <Card className={classes.root}>
             <CardContent>
-
-
                 <Typography className={classes.title} color="textSecondary">
                     {props.tagName}
                     {/* Pass in props here */}
                 </Typography>
-
-
             </CardContent>
 
         </Card>

@@ -6,6 +6,7 @@ import TaggedCards from './taggedCards';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -18,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     display: 'flex',
     overflow: 'auto',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: 'auto'
   },
   fixedHeight: {
     height: 240,
@@ -53,7 +56,7 @@ export default function TagsPaper(props) {
                 {showTagCards}
                 {props.savedTagArray.map((e)=>{
                   
-                  return <div key={e} ><TaggedCards tagName={e}/> <br/></div>
+                  return <div key={e} style={{marginLeft: 5}} ><TaggedCards tagName={e}/></div>
                 })}
                
               </Paper>

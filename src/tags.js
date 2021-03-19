@@ -9,7 +9,7 @@ export default class Tags extends Component {
         super(props);
         this.state = {
             tags: ["apple"],
-            savedTags: ["Apple", "Orange"]
+            savedTags: ["Stripe", "Investment"]
         };
         this.getTags = this.getTags.bind(this);
         this.getChromeStoragefunction = this.getChromeStoragefunction.bind(this);

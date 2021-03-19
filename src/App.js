@@ -11,7 +11,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tab: "recommend",
+      tab: "tags",
 
     };
     this.handleTab = this.handleTab.bind(this);

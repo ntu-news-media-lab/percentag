@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ad73586e5aa5e1db947c";
+/******/ 	var hotCurrentHash = "f983b2890b9d89ef89d7";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95132,7 +95132,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tab: "recommend"
+      tab: "tags"
     };
     this.handleTab = this.handleTab.bind(this);
   }
@@ -95283,23 +95283,6 @@ class ApiCall extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return body;
     };
 
-    this.handleSubmit = async e => {
-      e.preventDefault();
-      const response = await fetch('http://localhost:5000/api/forms', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          post: this.state.post
-        })
-      });
-      const body = await response.text();
-      this.setState({
-        responseToPost: body
-      });
-    };
-
     this.state = {
       response: '',
       post: '',
@@ -95343,53 +95326,10 @@ class ApiCall extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     let tagArray = this.props.tags;
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
-      className: "App",
-      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("form", {
-        onSubmit: this.handleSubmit,
-        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("p", {
-          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("strong", {
-            children: "Post to Server:"
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 88,
-            columnNumber: 13
-          }, this)
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 87,
-          columnNumber: 11
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("input", {
-          type: "text",
-          value: this.state.post,
-          onChange: e => this.setState({
-            post: e.target.value
-          })
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 90,
-          columnNumber: 11
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("button", {
-          type: "submit",
-          children: "Submit"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 95,
-          columnNumber: 11
-        }, this)]
-      }, void 0, true, {
-        fileName: _jsxFileName,
-        lineNumber: 86,
-        columnNumber: 9
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("p", {
-        children: this.state.responseToPost
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 97,
-        columnNumber: 9
-      }, this)]
-    }, void 0, true, {
+      className: "App"
+    }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 68,
       columnNumber: 7
     }, this);
   }
@@ -95462,10 +95402,12 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     paddingBottom: theme.spacing(4)
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: 'auto'
   },
   fixedHeight: {
     height: 240
@@ -95483,60 +95425,53 @@ function CurrentTagPaper(props) {
         xs: 11,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_6__["default"], {
           className: classes.paper,
-          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("div", {
-            children: props.tagArray.map(e => {
-              return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("div", {
-                children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_tagCards__WEBPACK_IMPORTED_MODULE_8__["default"], {
-                  tagName: e
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 61,
-                  columnNumber: 40
-                }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("br", {}, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 61,
-                  columnNumber: 64
-                }, this)]
-              }, e, true, {
+          children: props.tagArray.map(e => {
+            return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("div", {
+              style: {
+                padding: 5
+              },
+              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_tagCards__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                tagName: e
+              }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 61,
-                columnNumber: 26
-              }, this);
-            })
-          }, void 0, false, {
-            fileName: _jsxFileName,
-            lineNumber: 58,
-            columnNumber: 15
-          }, this)
+                lineNumber: 62,
+                columnNumber: 61
+              }, this)
+            }, e, false, {
+              fileName: _jsxFileName,
+              lineNumber: 62,
+              columnNumber: 26
+            }, this);
+          })
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 56,
+          lineNumber: 57,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 56,
         columnNumber: 13
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
         pt: 4,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(Copyright, {}, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 69,
           columnNumber: 13
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 68,
         columnNumber: 11
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 54,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 52,
+    lineNumber: 53,
     columnNumber: 5
   }, this);
 }
@@ -95711,11 +95646,11 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     display: 'flex'
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4)
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2)
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column'
@@ -95751,7 +95686,7 @@ function RecomPaper(props) {
       className: classes.container,
       children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__["default"], {
         container: true,
-        spacing: 3,
+        spacing: 1,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__["default"], {
           item: true,
           xs: 12,
@@ -96128,7 +96063,7 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tagCards.js";
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     display: 'flex',
-    maxWidth: 75,
+    maxWidth: 100,
     maxHeight: 50
   },
   details: {
@@ -96145,12 +96080,12 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     paddingLeft: theme.spacing(1)
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
     overflow: 'auto'
   },
   addIcon: {
-    height: 12,
-    width: 12
+    height: 10,
+    width: 10
   }
 }));
 
@@ -96261,29 +96196,15 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/taggedCards.js";
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     display: 'flex',
-    maxWidth: 75,
+    maxWidth: 100,
     maxHeight: 50
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'auto'
   },
   content: {
     flex: '1 0 auto'
   },
-  controls: {
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: theme.spacing(1)
-  },
   title: {
     fontSize: 12,
     overflow: 'auto'
-  },
-  addIcon: {
-    height: 12,
-    width: 12
   }
 }));
 
@@ -96325,17 +96246,17 @@ function TaggedCards(props) {
         children: props.tagName
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 54,
         columnNumber: 17
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 53,
       columnNumber: 13
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 65,
+    lineNumber: 52,
     columnNumber: 9
   }, this);
 }
@@ -96372,7 +96293,7 @@ class Tags extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(props);
     this.state = {
       tags: ["apple"],
-      savedTags: ["Apple", "Orange"]
+      savedTags: ["Stripe", "Investment"]
     };
     this.getTags = this.getTags.bind(this);
     this.getChromeStoragefunction = this.getChromeStoragefunction.bind(this);
@@ -96508,7 +96429,9 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
     padding: theme.spacing(2),
     display: 'flex',
     overflow: 'auto',
-    flexDirection: 'column'
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: 'auto'
   },
   fixedHeight: {
     height: 240
@@ -96523,13 +96446,13 @@ function TagsPaper(props) {
       children: "None Yet. Start Following Tags!"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 37,
       columnNumber: 20
     }, this);
   } else {
     showTagCards = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("span", {}, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 42,
       columnNumber: 20
     }, this);
   }
@@ -96546,41 +96469,40 @@ function TagsPaper(props) {
           className: classes.paper,
           children: [showTagCards, props.savedTagArray.map(e => {
             return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("div", {
-              children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_taggedCards__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              style: {
+                marginLeft: 5
+              },
+              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_taggedCards__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 tagName: e
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 56,
-                columnNumber: 40
-              }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("br", {}, void 0, false, {
-                fileName: _jsxFileName,
-                lineNumber: 56,
-                columnNumber: 67
-              }, this)]
-            }, e, true, {
+                lineNumber: 59,
+                columnNumber: 64
+              }, this)
+            }, e, false, {
               fileName: _jsxFileName,
-              lineNumber: 56,
+              lineNumber: 59,
               columnNumber: 26
             }, this);
           })]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 52,
+          lineNumber: 55,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 54,
         columnNumber: 13
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 50,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 44,
+    lineNumber: 47,
     columnNumber: 5
   }, this);
 }
