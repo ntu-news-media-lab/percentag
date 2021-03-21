@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let url = 'https://www.dealstreetasia.com/stories/tvm-capital-healthcare-2-232270/'
+let savedTags ['Stripe', 'Investment']
 
 //get tags from DSA news web
 const getPostTags = async () => {
