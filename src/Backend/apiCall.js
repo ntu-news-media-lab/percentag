@@ -31,7 +31,6 @@ export default class ApiCall extends Component {
         this.getTagApi(url)
       }
     }); 
-    
   }
  
 
@@ -56,13 +55,14 @@ export default class ApiCall extends Component {
     if (response.status !== 200) throw Error(body.message);
     return body;
   };
+
   sendTags(value) {
     this.props.getTags(value);
   }
 
 
   render() {
-    let tagArray = this.props.tags;
+    // let tagArray = this.props.tags;
 
     return (
       <div className="App">

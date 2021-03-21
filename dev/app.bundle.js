@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "dc479ffe037f4be823f6";
+/******/ 	var hotCurrentHash = "df28d76f3bed9e1aaf36";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95122,8 +95122,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/App.js";
 
-/*global chrome*/
-
 
 
 
@@ -95133,30 +95131,13 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/App.js";
 class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
-
-    this.saveArrayToState = array => {
-      this.setState({
-        savedTags: array
-      });
-      console.log("saved tags in app.js: " + this.state.savedTags[0]);
-    };
-
     this.state = {
-      tab: "tags",
-      savedTags: []
+      tab: "tags"
     };
     this.handleTab = this.handleTab.bind(this);
-    this.saveArrayToState = this.saveArrayToState.bind(this);
   }
 
-  componentDidMount() {
-    let newThis = this;
-    chrome.storage.local.get(['tags'], function (result) {
-      console.log("retrieved tags is" + result.tags); // you can use the variable or set to any state variable from here
-
-      newThis.saveArrayToState(result.tags);
-    });
-  }
+  componentDidMount() {}
 
   handleTab(value) {
     this.setState({
@@ -95165,19 +95146,15 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
-    let tagsTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_tags__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      savedTags: this.state.savedTags
-    }, void 0, false, {
+    let tagsTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_tags__WEBPACK_IMPORTED_MODULE_4__["default"], {}, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 34,
       columnNumber: 19
     }, this);
 
-    let recommendTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommend__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      savedTags: this.state.savedTags
-    }, void 0, false, {
+    let recommendTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommend__WEBPACK_IMPORTED_MODULE_5__["default"], {}, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 35,
       columnNumber: 24
     }, this);
 
@@ -95202,7 +95179,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           alt: "logo"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 46,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
           children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButtonGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -95222,7 +95199,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
               children: "Tags"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 70,
+              lineNumber: 57,
               columnNumber: 15
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
               value: "recommend",
@@ -95235,34 +95212,34 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
               children: "Recommended"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 73,
+              lineNumber: 60,
               columnNumber: 15
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 62,
+            lineNumber: 49,
             columnNumber: 13
           }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
             className: "showTab",
             children: showtab
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 78,
+            lineNumber: 65,
             columnNumber: 13
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 60,
+          lineNumber: 47,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 45,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 44,
       columnNumber: 7
     }, this);
   }
@@ -95353,7 +95330,7 @@ class ApiCall extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    let tagArray = this.props.tags;
+    // let tagArray = this.props.tags;
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
       className: "App"
     }, void 0, false, {
@@ -95789,21 +95766,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommend.js";
 
+/*global chrome*/
+
 
 
 class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
 
-    this.callApiGetTag = async () => {
-      const response = await fetch('http://localhost:5000/api/getTags');
+    this.getRecommendation = async () => {
+      console.log("savedTages in recommend to be send:" + this.state.savedTags);
+      const response = await fetch('http://localhost:5000/api/getReco', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          tags: this.state.savedTags
+        })
+      });
       const body = await response.json();
       if (response.status !== 200) throw Error(body.message);
       return body;
     };
 
     this.state = {
-      recommend: [{
+      recommended: [{
         title: "Stripe's value huts $95B",
         img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
         date: Date().toLocaleString(),
@@ -95816,45 +95804,56 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }],
       savedTags: []
     };
-    this.getTagApi = this.getTagApi.bind(this);
+    this.getRecommendation = this.getRecommendation.bind(this);
   }
 
   componentDidMount() {
-    this.getTagApi();
-  }
-
-  getTagApi() {
-    this.callApiGetTag().then(res => {
-      this.setState({
-        savedTags: res.express
+    let newThis = this;
+    chrome.storage.local.get(['tags'], function (result) {
+      newThis.setState({
+        savedTags: result.tags
       });
-    }).catch(err => console.log(err));
+      newThis.getRecommendation();
+    });
   }
 
+  // getTagApi() {
+  //     this.callApiGetTag()
+  //         .then(res => { 
+  //             this.setState({ savedTags: res.express }) 
+  //         })
+  //         .catch(err => console.log(err));
+  // }
+  // callApiGetTag = async () => {
+  //     const response = await fetch('http://localhost:5000/api/getTags');
+  //     const body = await response.json();
+  //     if (response.status !== 200) throw Error(body.message);
+  //     return body;
+  //   };
   render() {
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
       children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("p", {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 74,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 75,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        recommendation: this.state.recommend
+        recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 78,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 73,
       columnNumber: 13
     }, this);
   }
@@ -95883,8 +95882,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommendCards.js";
-
-/*global chrome*/
 
 
 
@@ -95953,7 +95950,7 @@ function RecommendCards(props) {
       children: props.recoCardMatch + "% match"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 66,
       columnNumber: 22
     }, this);
   } else if (props.recoCardMatch > 75) {
@@ -95963,7 +95960,7 @@ function RecommendCards(props) {
       children: props.recoCardMatch + "% match"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 71,
       columnNumber: 22
     }, this);
   } else {
@@ -95973,7 +95970,7 @@ function RecommendCards(props) {
       children: props.recoCardMatch + "% match"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 75,
       columnNumber: 22
     }, this);
   }
@@ -95985,7 +95982,7 @@ function RecommendCards(props) {
       image: props.recoCardImg
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 82,
       columnNumber: 13
     }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
       className: classes.details,
@@ -95996,7 +95993,7 @@ function RecommendCards(props) {
           children: props.recoCardTitle
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 89,
+          lineNumber: 88,
           columnNumber: 21
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: classes.date,
@@ -96004,22 +96001,22 @@ function RecommendCards(props) {
           children: props.recoCardDate
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 91,
           columnNumber: 21
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 87,
         columnNumber: 17
       }, this), matchColor]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 86,
       columnNumber: 13
     }, this)]
   }, void 0, true, {
     fileName: _jsxFileName,
-    lineNumber: 82,
+    lineNumber: 81,
     columnNumber: 9
   }, this);
 }
@@ -96136,7 +96133,6 @@ function saveTag(tagName) {
       chrome.storage.local.set({
         tags: tempArray
       }, function () {
-        console.log('2 Value is set to ' + tempArray);
         tempArray.map(e => console.log(e));
       });
     }
@@ -96157,7 +96153,7 @@ function TagCards(props) {
           children: props.tagName
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 68,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
           "aria-label": "play/pause",
@@ -96166,27 +96162,27 @@ function TagCards(props) {
             className: classes.addIcon
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 74,
+            lineNumber: 73,
             columnNumber: 13
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 72,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 68,
+        lineNumber: 67,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 66,
       columnNumber: 7
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 66,
+    lineNumber: 65,
     columnNumber: 5
   }, this);
 }
@@ -96213,8 +96209,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/taggedCards.js";
 
-/*global chrome*/
-
 
 
 
@@ -96234,34 +96228,6 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     overflow: 'auto'
   }
 }));
-
-function saveTag(tagName) {
-  let tagArray = [];
-  chrome.storage.local.get({
-    tags: []
-  }, function (result) {
-    var tags = result.tag;
-
-    if (typeof tags === "undefined") {
-      tagArray.push(tagName);
-      chrome.storage.local.set({
-        tags: tagArray
-      }, function () {
-        console.log('Value is set to ' + tagArray);
-      });
-    } else {
-      let tempArray = [...tags];
-      tempArray.push(tagName);
-      chrome.storage.local.set({
-        tags: tempArray
-      }, function () {
-        console.log('2 Value is set to ' + tempArray);
-        tempArray.map(e => console.log(e));
-      });
-    }
-  });
-}
-
 function TaggedCards(props) {
   const classes = useStyles();
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -96273,17 +96239,17 @@ function TaggedCards(props) {
         children: props.tagName
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 31,
         columnNumber: 17
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 30,
       columnNumber: 13
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 52,
+    lineNumber: 29,
     columnNumber: 9
   }, this);
 }
@@ -96318,48 +96284,55 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tags.js";
 class Tags extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
+
+    this.saveArrayToState = array => {
+      this.setState({
+        savedTags: array
+      });
+    };
+
     this.state = {
       tags: [""],
-      savedTags: ["Stripe", "Investment"]
+      savedTags: [""]
     };
     this.getTags = this.getTags.bind(this);
     this.getChromeStoragefunction = this.getChromeStoragefunction.bind(this);
-    this.updateState = this.updateState.bind(this);
+    this.saveArrayToState = this.saveArrayToState.bind(this);
   }
 
   componentDidMount() {
-    this.getChromeStoragefunction(this.state.savedTags);
+    let newThis = this;
+    chrome.storage.local.get(['tags'], function (result) {
+      // console.log("retrieved tags is" + result.tags);
+      newThis.saveArrayToState(result.tags);
+    });
+    this.getChromeStoragefunction();
   }
 
-  getChromeStoragefunction(saved) {
+  componentWillUnmount() {
+    let newThis = this;
+    chrome.storage.local.set({
+      tags: newThis.state.savedTags
+    }, function () {
+      console.log("saved: " + newThis.state.savedTags);
+    });
+  }
+
+  getChromeStoragefunction() {
+    let newThis = this;
     chrome.storage.onChanged.addListener(function (changes, namespace) {
-      let tempArray = [...saved];
+      let tempArray = [...newThis.state.savedTags];
 
       for (var key in changes) {
         var storageChange = changes[key];
         storageChange.newValue.map(e => {
-          console.log("new values " + e);
-        }); // console.log('Storage key "%s" in namespace "%s" changed. ' +
-        //             'Old value was "%s", new value is "%s".',
-        //             key,
-        //             namespace,
-        //             storageChange.oldValue,
-        //             storageChange.newValue);
-
-        storageChange.newValue.map(e => {
-          tempArray.push(e);
+          if (!tempArray.includes(e)) {
+            tempArray.push(e);
+          }
         });
+        newThis.saveArrayToState(tempArray);
       }
-
-      this.updateState(tempArray);
     });
-  }
-
-  updateState(tempArray) {
-    this.setState({
-      savedTags: [""]
-    });
-    console.log("In tags.js, savedTags: " + this.state.savedTags);
   }
 
   getTags(e) {
@@ -96375,43 +96348,43 @@ class Tags extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "Get recommendations for articles that matches your interests when you follow more tags:"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 67,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("b", {
         children: "You are following"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 71,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_tagsPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         savedTagArray: this.state.savedTags
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 65,
+        lineNumber: 75,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])("b", {
         children: "From this article"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 76,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_currentTagPaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tagArray: this.state.tags
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 80,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_Backend_apiCall__WEBPACK_IMPORTED_MODULE_3__["default"], {
         getTags: this.getTags,
         tags: this.state.tags
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 81,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 66,
       columnNumber: 13
     }, this);
   }
@@ -96477,11 +96450,25 @@ function TagsPaper(props) {
       columnNumber: 20
     }, this);
   } else {
-    showTagCards = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("span", {}, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 20
-    }, this);
+    showTagCards = props.savedTagArray.map(e => {
+      return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("div", {
+        style: {
+          marginLeft: 5,
+          marginBottom: 2
+        },
+        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_taggedCards__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          tagName: e
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 69
+        }, this)
+      }, e, false, {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 14
+      }, this);
+    });
   }
 
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("div", {
@@ -96494,42 +96481,25 @@ function TagsPaper(props) {
         xs: 11,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: classes.paper,
-          children: [showTagCards, props.savedTagArray.map(e => {
-            return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])("div", {
-              style: {
-                marginLeft: 5
-              },
-              children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_taggedCards__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                tagName: e
-              }, void 0, false, {
-                fileName: _jsxFileName,
-                lineNumber: 59,
-                columnNumber: 64
-              }, this)
-            }, e, false, {
-              fileName: _jsxFileName,
-              lineNumber: 59,
-              columnNumber: 26
-            }, this);
-          })]
-        }, void 0, true, {
+          children: showTagCards
+        }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 55,
+          lineNumber: 58,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 57,
         columnNumber: 13
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 53,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 47,
+    lineNumber: 50,
     columnNumber: 5
   }, this);
 }

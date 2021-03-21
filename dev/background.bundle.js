@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "dc479ffe037f4be823f6";
+/******/ 	var hotCurrentHash = "df28d76f3bed9e1aaf36";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -11744,21 +11744,17 @@ module.exports.formatError = function (err) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "messageInBackground", function() { return messageInBackground; });
 // If your extension doesn't need a background script, just leave this file empty
-
-/*global chrome*/
+// /*global chrome*/
 messageInBackground(); // This needs to be an export due to typescript implementation limitation of needing '--isolatedModules' tsconfig
 
 function messageInBackground() {
   console.log('I can run your javascript like any other code in your project');
   console.log('just do not forget, I cannot render anything !');
 }
-console.log("inside bg script");
-let savedTags = ["Stripe", "Investment"];
-chrome.storage.local.set({
-  tags: savedTags
-}, function () {
-  console.log("retrieved: " + savedTags);
-});
+console.log("inside bg script"); // let savedTags = ["Stripe", "Investment"];
+// chrome.storage.local.set({ tags: savedTags }, function () {
+//     console.log("retrieved: " + savedTags);
+// })
 
 /***/ }),
 

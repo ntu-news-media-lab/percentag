@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let url = 'https://www.dealstreetasia.com/stories/tvm-capital-healthcare-2-232270/'
-let savedTags ['Stripe', 'Investment']
+let savedTags;
 
 //get tags from DSA news web
 const getPostTags = async () => {
@@ -47,11 +47,7 @@ const getPostText = async () =>{
     }
 }
 
-app.get('/api/getTags', (req, res) => {
-    res.send({ express: ['stripe'] });
-  });
-
-
+//scrapTags
 app.post('/api/scrap', (req, res) => {
     url = req.body.url
     getPostTags()
@@ -60,8 +56,10 @@ app.post('/api/scrap', (req, res) => {
 });
 
 
-app.post('/api/forms', (req, res) => {
-    console.log(req.body);
+app.post('/api/getReco', (req, res) => {
+    
+    savedTags = req.body.tags
+    console.log(savedTags);
     res.send(
         `I received your POST request. This is what you sent me: ${req.body.post}`,
     );

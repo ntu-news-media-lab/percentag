@@ -9,39 +9,49 @@ export default class Tags extends Component {
         super(props);
         this.state = {
             tags: [""],
-            savedTags: ["Stripe", "Investment"]
+            savedTags: [""]
         };
         this.getTags = this.getTags.bind(this);
         this.getChromeStoragefunction = this.getChromeStoragefunction.bind(this);
-        this.updateState = this.updateState.bind(this);
+        this.saveArrayToState = this.saveArrayToState.bind(this);
     }
 
     componentDidMount() {
-        this.getChromeStoragefunction(this.state.savedTags);    
+        let newThis = this;
+        chrome.storage.local.get(['tags'], function (result) {
+            // console.log("retrieved tags is" + result.tags);
+            newThis.saveArrayToState(result.tags);
+        });
+        this.getChromeStoragefunction();
     }
-    
-    getChromeStoragefunction(saved) {
-        chrome.storage.onChanged.addListener(function (changes, namespace) {
-        let tempArray = [...saved];
-          for (var key in changes) {
-            var storageChange = changes[key];
-            storageChange.newValue.map(e => { console.log("new values " + e) })
-            // console.log('Storage key "%s" in namespace "%s" changed. ' +
-            //             'Old value was "%s", new value is "%s".',
-            //             key,
-            //             namespace,
-            //             storageChange.oldValue,
-            //             storageChange.newValue);
-            storageChange.newValue.map(e => { tempArray.push(e) })
-          }
-          this.updateState(tempArray);  
-        }  ); 
-    }
-    updateState(tempArray){
-        this.setState({
-            savedTags: [""]
+
+    componentWillUnmount() {
+        let newThis = this;
+        chrome.storage.local.set({ tags: newThis.state.savedTags }, function () {
+            console.log("saved: " + newThis.state.savedTags);
         })
-        console.log("In tags.js, savedTags: "+ this.state.savedTags);
+    }
+
+    getChromeStoragefunction() {
+        let newThis = this;
+        chrome.storage.onChanged.addListener(function (changes, namespace) {
+            let tempArray = [...newThis.state.savedTags];
+            for (var key in changes) {
+                var storageChange = changes[key];
+                storageChange.newValue.map(e => { 
+                    if (!tempArray.includes(e)){
+                        tempArray.push(e)
+                    } 
+                })
+                newThis.saveArrayToState(tempArray);
+            }
+        });
+    }
+
+    saveArrayToState = (array) => {
+        this.setState({
+            savedTags: array
+        })
     }
     getTags(e) {
         this.setState({
@@ -62,13 +72,13 @@ export default class Tags extends Component {
                     You are following
                 </b>
 
-                <TagsPaper savedTagArray={this.state.savedTags}/>
+                <TagsPaper savedTagArray={this.state.savedTags} />
                 <b>
                     From this article
                 </b>
-                
+
                 <CurrentTagPaper tagArray={this.state.tags} />
-                <ApiCall getTags={this.getTags}  tags={this.state.tags}/>
+                <ApiCall getTags={this.getTags} tags={this.state.tags} />
             </div>
         )
     }

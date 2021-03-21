@@ -1,4 +1,3 @@
-/*global chrome*/
 import React from 'react';
 import './App.css';
 import ToggleButton from '@material-ui/lab/ToggleButton';
@@ -13,28 +12,16 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       tab: "tags",
-      savedTags: []
     };
     this.handleTab = this.handleTab.bind(this);
-    this.saveArrayToState = this.saveArrayToState.bind(this);
+   
   }
 
 
   componentDidMount() {
-    let newThis = this;
-    chrome.storage.local.get(['tags'], function (result) {
-      console.log("retrieved tags is" + result.tags);
-      // you can use the variable or set to any state variable from here
-      newThis.saveArrayToState(result.tags);
-    });
+  
   }
 
-  saveArrayToState = (array) => {
-    this.setState({
-      savedTags: array
-    })
-    console.log("saved tags in app.js: " + this.state.savedTags[0])
-  }
 
   handleTab(value) {
     this.setState({
@@ -43,9 +30,9 @@ export default class App extends React.Component {
   }
 
   render() {
-
-    let tagsTab = <Tags savedTags={this.state.savedTags} />;
-    let recommendTab = <Recommend savedTags={this.state.savedTags}/>;
+    
+    let tagsTab = <Tags/>;
+    let recommendTab = <Recommend/>;
     let showtab;
     if (this.state.tab === "tags") {
       showtab = tagsTab;

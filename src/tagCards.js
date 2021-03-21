@@ -50,7 +50,6 @@ function saveTag(tagName) {
       let tempArray = [...tags];
       tempArray.push(tagName)
       chrome.storage.local.set({ tags: tempArray }, function () {
-        console.log('2 Value is set to ' + tempArray);
         tempArray.map(e => console.log(e))
       });
     }

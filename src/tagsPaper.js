@@ -39,7 +39,10 @@ export default function TagsPaper(props) {
     </p>
   }
   else{
-    showTagCards = <span></span>
+    showTagCards =  props.savedTagArray.map((e)=>{
+                  
+      return <div key={e} style={{marginLeft: 5, marginBottom: 2}} ><TaggedCards tagName={e}/></div>
+    })
   }
 
 
@@ -54,11 +57,6 @@ export default function TagsPaper(props) {
             <Grid item xs={11}>
               <Paper className={classes.paper}>
                 {showTagCards}
-                {props.savedTagArray.map((e)=>{
-                  
-                  return <div key={e} style={{marginLeft: 5}} ><TaggedCards tagName={e}/></div>
-                })}
-               
               </Paper>
             </Grid>
           
