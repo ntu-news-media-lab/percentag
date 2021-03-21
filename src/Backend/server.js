@@ -10,6 +10,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let url = 'https://www.dealstreetasia.com/stories/tvm-capital-healthcare-2-232270/'
+var d = new Date();
+var year = d.getFullYear().toString();
+var month = d.getMonth();
+month = month + 1;
+if (month<=10){
+    month = '0' + month;
+}
+let siteurl = 'https://www.dealstreetasia.com/sitemap-posttype-stories.'+ year+month +'.xml'
+
 let savedTags;
 
 //get tags from DSA news web
@@ -31,6 +40,25 @@ const getPostTags = async () => {
         throw error;
     }
 };
+
+const getAllURLLink = async () =>{
+    
+    try{
+        const { data } = await axios.get(siteurl);
+        const $ = cheerio.load(data);
+        const urlLinks = [];
+        $('.a').each((_idx, element) => {
+            const urlLink = $(element).text()
+            urlLinks.push(urlLink)
+        });
+        console.log(urlLinks)
+        return urlLinks;
+    }
+    catch (error) {
+        throw error;
+    }    
+    
+}
 
 //get The entire chunk of text from DSA
 const getPostText = async () =>{
@@ -60,6 +88,7 @@ app.post('/api/getReco', (req, res) => {
     
     savedTags = req.body.tags
     console.log(savedTags);
+    getAllURLLink().then((urlLinks) => {console.log(urlLinks);})
     res.send(
         `I received your POST request. This is what you sent me: ${req.body.post}`,
     );

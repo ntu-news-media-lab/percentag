@@ -51,7 +51,7 @@ export default function RecomPaper(props) {
                   {showRecommend}
                   {props.recommendation.map((e)=>{
                   
-                  return <div key={e.title} ><RecommendCards recoCardTitle={e.title} recoCardImg={e.img} recoCardDate={e.date} recoCardMatch={e.match}/> <br/></div>
+                  return <div key={e.title} ><RecommendCards recoCardTitle={e.title} recoCardImg={e.img} recoCardDate={e.date} recoCardMatch={e.match} recoCardUrl={e.url}/> <br/></div>
                 })}
                   
               </Paper>

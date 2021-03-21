@@ -9,8 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        color: "black"
-    
+        color: "black",
+        cursor: "pointer"
     },
     details: {
         display: 'flex',
@@ -55,46 +55,46 @@ const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: 14,
         overflow: 'auto'
-    },
+    }
 }));
 
 export default function RecommendCards(props) {
     const classes = useStyles();
 
     let matchColor;
-    if(props.recoCardMatch <50){
+    if (props.recoCardMatch < 50) {
         matchColor = <Typography className={classes.matchRed} color="inherit">
-        {props.recoCardMatch + "% match"}
-    </Typography>
+            {props.recoCardMatch + "% match"}
+        </Typography>
     }
-    else if(props.recoCardMatch > 75){
+    else if (props.recoCardMatch > 75) {
         matchColor = <Typography className={classes.matchGreen} color="inherit">
-        {props.recoCardMatch + "% match"}
-    </Typography>
-    }else{
+            {props.recoCardMatch + "% match"}
+        </Typography>
+    } else {
         matchColor = <Typography className={classes.matchOrange} color="inherit">
-        {props.recoCardMatch + "% match"}
-    </Typography>
+            {props.recoCardMatch + "% match"}
+        </Typography>
     }
 
     return (
-        <Card className={classes.root}>
-            <CardMedia
-                className={classes.cover}
-                image={props.recoCardImg}
-            />
-            <div className={classes.details}>
-                <CardContent className={classes.content}>
-                    <Typography className={classes.title}>
-                        {props.recoCardTitle}
-                    </Typography>
-                    <Typography className={classes.date} color="textSecondary">
-                        {props.recoCardDate}
-                    </Typography>
-                </CardContent>
-                {matchColor}
-            </div>
-
+        <Card className={classes.root}  onClick={() => { window.open(props.recoCardUrl); }} >
+                <CardMedia
+                    className={classes.cover}
+                    image={props.recoCardImg}
+                />
+                <div className={classes.details} >
+                    <CardContent className={classes.content}>
+                        <Typography className={classes.title} >
+                            {props.recoCardTitle}
+                        </Typography>
+                        <Typography className={classes.date} color="textSecondary">
+                            {props.recoCardDate}
+                        </Typography>
+                    </CardContent>
+                    {matchColor}
+                </div>
+             
         </Card>
     );
 }

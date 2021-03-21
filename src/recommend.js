@@ -12,13 +12,15 @@ export default class Recommend extends Component {
                         title: "Stripe's value huts $95B",
                         img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
                         date: Date().toLocaleString(),
-                        match: 95
+                        match: 95,
+                        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/",
                     },
                     {
                         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
                         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
                         date: Date().toLocaleString(),
-                        match: 65
+                        match: 65,
+                        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
                     }
                 ],
             savedTags: [],

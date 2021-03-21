@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "df28d76f3bed9e1aaf36";
+/******/ 	var hotCurrentHash = "fbfb5596c9aa24798506";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95704,7 +95704,8 @@ function RecomPaper(props) {
                   recoCardTitle: e.title,
                   recoCardImg: e.img,
                   recoCardDate: e.date,
-                  recoCardMatch: e.match
+                  recoCardMatch: e.match,
+                  recoCardUrl: e.url
                 }, void 0, false, {
                   fileName: _jsxFileName,
                   lineNumber: 54,
@@ -95712,7 +95713,7 @@ function RecomPaper(props) {
                 }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
                   fileName: _jsxFileName,
                   lineNumber: 54,
-                  columnNumber: 154
+                  columnNumber: 174
                 }, this)]
               }, e.title, true, {
                 fileName: _jsxFileName,
@@ -95795,12 +95796,14 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         title: "Stripe's value huts $95B",
         img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
         date: Date().toLocaleString(),
-        match: 95
+        match: 95,
+        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
       }, {
         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
         date: Date().toLocaleString(),
-        match: 65
+        match: 65,
+        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
       }],
       savedTags: []
     };
@@ -95836,24 +95839,24 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 76,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 75,
+        lineNumber: 77,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 78,
+        lineNumber: 80,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 13
     }, this);
   }
@@ -95892,7 +95895,8 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommendCards.j
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     display: 'flex',
-    color: "black"
+    color: "black",
+    cursor: "pointer"
   },
   details: {
     display: 'flex',
@@ -95977,13 +95981,16 @@ function RecommendCards(props) {
 
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.root,
+    onClick: () => {
+      window.open(props.recoCardUrl);
+    },
     children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__["default"], {
       className: classes.cover,
       image: props.recoCardImg
     }, void 0, false, {
       fileName: _jsxFileName,
       lineNumber: 82,
-      columnNumber: 13
+      columnNumber: 17
     }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
       className: classes.details,
       children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["CardContent"], {
@@ -95994,7 +96001,7 @@ function RecommendCards(props) {
         }, void 0, false, {
           fileName: _jsxFileName,
           lineNumber: 88,
-          columnNumber: 21
+          columnNumber: 25
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: classes.date,
           color: "textSecondary",
@@ -96002,17 +96009,17 @@ function RecommendCards(props) {
         }, void 0, false, {
           fileName: _jsxFileName,
           lineNumber: 91,
-          columnNumber: 21
+          columnNumber: 25
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
         lineNumber: 87,
-        columnNumber: 17
+        columnNumber: 21
       }, this), matchColor]
     }, void 0, true, {
       fileName: _jsxFileName,
       lineNumber: 86,
-      columnNumber: 13
+      columnNumber: 17
     }, this)]
   }, void 0, true, {
     fileName: _jsxFileName,
