@@ -8,7 +8,7 @@ export default class Tags extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tags: ["apple"],
+            tags: [""],
             savedTags: ["Stripe", "Investment"]
         };
         this.getTags = this.getTags.bind(this);
@@ -17,9 +17,9 @@ export default class Tags extends Component {
     }
 
     componentDidMount() {
-        this.getChromeStoragefunction(this.state.savedTags);
+        this.getChromeStoragefunction(this.state.savedTags);    
     }
- 
+    
     getChromeStoragefunction(saved) {
         chrome.storage.onChanged.addListener(function (changes, namespace) {
         let tempArray = [...saved];

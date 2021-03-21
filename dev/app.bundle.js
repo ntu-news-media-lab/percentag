@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f983b2890b9d89ef89d7";
+/******/ 	var hotCurrentHash = "dc479ffe037f4be823f6";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95122,6 +95122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/App.js";
 
+/*global chrome*/
+
 
 
 
@@ -95131,10 +95133,29 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/App.js";
 class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
+
+    this.saveArrayToState = array => {
+      this.setState({
+        savedTags: array
+      });
+      console.log("saved tags in app.js: " + this.state.savedTags[0]);
+    };
+
     this.state = {
-      tab: "tags"
+      tab: "tags",
+      savedTags: []
     };
     this.handleTab = this.handleTab.bind(this);
+    this.saveArrayToState = this.saveArrayToState.bind(this);
+  }
+
+  componentDidMount() {
+    let newThis = this;
+    chrome.storage.local.get(['tags'], function (result) {
+      console.log("retrieved tags is" + result.tags); // you can use the variable or set to any state variable from here
+
+      newThis.saveArrayToState(result.tags);
+    });
   }
 
   handleTab(value) {
@@ -95143,18 +95164,20 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     });
   }
 
-  componentDidMount() {}
-
   render() {
-    let tagsTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_tags__WEBPACK_IMPORTED_MODULE_4__["default"], {}, void 0, false, {
+    let tagsTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_tags__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      savedTags: this.state.savedTags
+    }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 47,
       columnNumber: 19
     }, this);
 
-    let recommendTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommend__WEBPACK_IMPORTED_MODULE_5__["default"], {}, void 0, false, {
+    let recommendTab = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommend__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      savedTags: this.state.savedTags
+    }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 48,
       columnNumber: 24
     }, this);
 
@@ -95171,11 +95194,15 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         className: "App",
         children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("img", {
           src: "/images/LogoFullB.png",
+          style: {
+            paddingLeft: "8px",
+            paddingTop: "5px"
+          },
           className: "App-logo",
           alt: "logo"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 59,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
           children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButtonGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -95188,52 +95215,54 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
               value: "tags",
               style: {
                 width: "125px",
-                height: "35px"
+                height: "35px",
+                fontSize: 13
               },
               onClick: () => this.handleTab("tags"),
               children: "Tags"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 57,
+              lineNumber: 70,
               columnNumber: 15
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
               value: "recommend",
               style: {
-                width: "125px",
-                height: "35px"
+                width: "130px",
+                height: "35px",
+                fontSize: 13
               },
               onClick: () => this.handleTab("recommend"),
-              children: "Recommend"
+              children: "Recommended"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 60,
+              lineNumber: 73,
               columnNumber: 15
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 49,
+            lineNumber: 62,
             columnNumber: 13
           }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
             className: "showTab",
             children: showtab
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 65,
+            lineNumber: 78,
             columnNumber: 13
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 60,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 58,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 57,
       columnNumber: 7
     }, this);
   }
@@ -95851,13 +95880,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 /* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "./node_modules/@material-ui/core/esm/CardMedia/index.js");
-/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/esm/colors/index.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommendCards.js";
 
 /*global chrome*/
-
 
 
 
@@ -95920,7 +95947,7 @@ function RecommendCards(props) {
   let matchColor;
 
   if (props.recoCardMatch < 50) {
-    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: classes.matchRed,
       color: "inherit",
       children: props.recoCardMatch + "% match"
@@ -95930,7 +95957,7 @@ function RecommendCards(props) {
       columnNumber: 22
     }, this);
   } else if (props.recoCardMatch > 75) {
-    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: classes.matchGreen,
       color: "inherit",
       children: props.recoCardMatch + "% match"
@@ -95940,7 +95967,7 @@ function RecommendCards(props) {
       columnNumber: 22
     }, this);
   } else {
-    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    matchColor = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: classes.matchOrange,
       color: "inherit",
       children: props.recoCardMatch + "% match"
@@ -95951,27 +95978,27 @@ function RecommendCards(props) {
     }, this);
   }
 
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.root,
-    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__["default"], {
       className: classes.cover,
       image: props.recoCardImg
     }, void 0, false, {
       fileName: _jsxFileName,
       lineNumber: 83,
       columnNumber: 13
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])("div", {
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
       className: classes.details,
-      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["CardContent"], {
+      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["CardContent"], {
         className: classes.content,
-        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: classes.title,
           children: props.recoCardTitle
         }, void 0, false, {
           fileName: _jsxFileName,
           lineNumber: 89,
           columnNumber: 21
-        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: classes.date,
           color: "textSecondary",
           children: props.recoCardDate
@@ -96292,7 +96319,7 @@ class Tags extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
-      tags: ["apple"],
+      tags: [""],
       savedTags: ["Stripe", "Investment"]
     };
     this.getTags = this.getTags.bind(this);
