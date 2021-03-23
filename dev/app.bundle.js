@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "2144ff070171164ed170";
+/******/ 	var hotCurrentHash = "dd1e7cfbe6ee0257492b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -96114,7 +96114,8 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   },
   title: {
     fontSize: 12,
-    overflow: 'auto'
+    overflow: 'auto',
+    color: "black"
   },
   addIcon: {
     height: 10,
@@ -96162,7 +96163,7 @@ function TagCards(props) {
           children: props.tagName
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 70,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
           "aria-label": "play/pause",
@@ -96171,27 +96172,27 @@ function TagCards(props) {
             className: classes.addIcon
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 73,
+            lineNumber: 75,
             columnNumber: 13
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 72,
+          lineNumber: 74,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 69,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 7
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 65,
+    lineNumber: 67,
     columnNumber: 5
   }, this);
 }
@@ -96228,14 +96229,17 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     display: 'flex',
     maxWidth: 110,
     maxHeight: 50,
-    padding: theme.spacing(1)
+    padding: theme.spacing(1),
+    background: "#0D3A71"
   },
   content: {
     flex: '1 0 auto'
   },
   title: {
     fontSize: 12,
-    overflow: 'auto'
+    overflow: 'auto',
+    color: "white",
+    fontWeight: "600"
   }
 }));
 function TaggedCards(props) {
@@ -96248,12 +96252,12 @@ function TaggedCards(props) {
       children: props.tagName
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 36,
       columnNumber: 17
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 30,
+    lineNumber: 34,
     columnNumber: 9
   }, this);
 }

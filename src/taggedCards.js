@@ -11,13 +11,17 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: 110,
         maxHeight: 50,
         padding: theme.spacing(1),
+        background: "#0D3A71"
+        
     },
     content: {
         flex: '1 0 auto',
     },
     title: {
         fontSize: 12,
-        overflow: 'auto'
+        overflow: 'auto',
+        color: "white",
+        fontWeight: "600"
     },
   
 }));

@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: 12,
-    overflow: 'auto'
+    overflow: 'auto',
+    color: "black",
+    
   },
   addIcon: {
     height: 10,
