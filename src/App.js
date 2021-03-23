@@ -34,12 +34,26 @@ export default class App extends React.Component {
     let tagsTab = <Tags />;
     let recommendTab = <Recommend />;
     let showtab;
+    let tagBtn; let recoBtn;
     if (this.state.tab === "tags") {
       showtab = tagsTab;
+      tagBtn = <ToggleButton value="tags" style={{ width: "125px", height: "35px", fontSize: 13, backgroundColor:"#0D3A71", color:"white"}} onClick={() => this.handleTab("tags")} >
+      Tags
+    </ToggleButton>
+      recoBtn =  <ToggleButton value="recommend" style={{ width: "130px", height: "35px", fontSize: 13}} onClick={() => this.handleTab("recommend")} >
+    Recommended
+  </ToggleButton>
     }
     else if (this.state.tab === "recommend") {
       showtab = recommendTab;
+      tagBtn = <ToggleButton value="tags" style={{ width: "125px", height: "35px", fontSize: 13}} onClick={() => this.handleTab("tags")} >
+      Tags
+    </ToggleButton>
+      recoBtn =  <ToggleButton value="recommend" style={{ width: "130px", height: "35px", fontSize: 13, backgroundColor:"#0D3A71", color:"white"}} onClick={() => this.handleTab("recommend")} >
+    Recommended
+  </ToggleButton>
     }
+    let selected = tagBtn
     return (
       
       <React.Fragment>
@@ -54,13 +68,11 @@ export default class App extends React.Component {
               aria-label="tabs"
               className="tabsBar"
               size="large"
+              
             >
-              <ToggleButton value="tags" style={{ width: "125px", height: "35px", fontSize: 13 }} onClick={() => this.handleTab("tags")} >
-                Tags
-              </ToggleButton>
-              <ToggleButton value="recommend" style={{ width: "130px", height: "35px", fontSize: 13 }} onClick={() => this.handleTab("recommend")} >
-                Recommended
-              </ToggleButton>
+              {tagBtn}
+              {recoBtn}
+              
             </ToggleButtonGroup>
 
             <div className="showTab">
