@@ -20,7 +20,7 @@ export default class Recommend extends Component {
                         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
                         date: Date().toLocaleString(),
                         match: 65,
-                        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
+                        url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
                     }
                 ],
             savedTags: [],

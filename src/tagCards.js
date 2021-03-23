@@ -10,7 +10,7 @@ import AddIcon from '@material-ui/icons/Add';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    maxWidth: 100,
+    maxWidth: 110,
     maxHeight: 50
   },
   details: {

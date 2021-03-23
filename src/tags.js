@@ -71,13 +71,15 @@ export default class Tags extends Component {
                 <b>
                     You are following
                 </b>
-
+                
                 <TagsPaper savedTagArray={this.state.savedTags} />
+
                 <b>
                     From this article
                 </b>
-
+                
                 <CurrentTagPaper tagArray={this.state.tags} />
+                
                 <ApiCall getTags={this.getTags} tags={this.state.tags} />
             </div>
         )

@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   container: {
+    minWidth:"103%",
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },

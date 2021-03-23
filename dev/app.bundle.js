@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fbfb5596c9aa24798506";
+/******/ 	var hotCurrentHash = "2144ff070171164ed170";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95179,7 +95179,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           alt: "logo"
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 48,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
           children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButtonGroup__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -95199,7 +95199,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
               children: "Tags"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 57,
+              lineNumber: 58,
               columnNumber: 15
             }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_lab_ToggleButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
               value: "recommend",
@@ -95212,34 +95212,34 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
               children: "Recommended"
             }, void 0, false, {
               fileName: _jsxFileName,
-              lineNumber: 60,
+              lineNumber: 61,
               columnNumber: 15
             }, this)]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 49,
+            lineNumber: 51,
             columnNumber: 13
           }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
             className: "showTab",
             children: showtab
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 65,
+            lineNumber: 66,
             columnNumber: 13
           }, this)]
         }, void 0, true, {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 49,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 7
     }, this);
   }
@@ -95404,6 +95404,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     display: 'flex'
   },
   container: {
+    minWidth: "103%",
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4)
   },
@@ -95440,44 +95441,44 @@ function CurrentTagPaper(props) {
                 tagName: e
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 62,
+                lineNumber: 63,
                 columnNumber: 61
               }, this)
             }, e, false, {
               fileName: _jsxFileName,
-              lineNumber: 62,
+              lineNumber: 63,
               columnNumber: 26
             }, this);
           })
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 57,
+          lineNumber: 58,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 57,
         columnNumber: 13
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
         pt: 4,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(Copyright, {}, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 70,
           columnNumber: 13
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 68,
+        lineNumber: 69,
         columnNumber: 11
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 53,
+    lineNumber: 54,
     columnNumber: 5
   }, this);
 }
@@ -95653,6 +95654,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   },
   container: {
     paddingTop: theme.spacing(2),
+    paddingRight: theme.spacing(3),
     paddingBottom: theme.spacing(2)
   },
   paper: {
@@ -95674,13 +95676,13 @@ function RecomPaper(props) {
       children: "Start Following Tags To View Articles Curated For You."
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 21
     }, this);
   } else {
     showRecommend = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 21
     }, this);
   }
@@ -95708,42 +95710,42 @@ function RecomPaper(props) {
                   recoCardUrl: e.url
                 }, void 0, false, {
                   fileName: _jsxFileName,
-                  lineNumber: 54,
+                  lineNumber: 55,
                   columnNumber: 46
                 }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
                   fileName: _jsxFileName,
-                  lineNumber: 54,
+                  lineNumber: 55,
                   columnNumber: 174
                 }, this)]
               }, e.title, true, {
                 fileName: _jsxFileName,
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 26
               }, this);
             })]
           }, void 0, true, {
             fileName: _jsxFileName,
-            lineNumber: 50,
+            lineNumber: 51,
             columnNumber: 15
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 50,
           columnNumber: 13
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 11
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 42,
+    lineNumber: 43,
     columnNumber: 5
   }, this);
 }
@@ -95803,7 +95805,7 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
         date: Date().toLocaleString(),
         match: 65,
-        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
+        url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
       }],
       savedTags: []
     };
@@ -96094,7 +96096,7 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tagCards.js";
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     display: 'flex',
-    maxWidth: 100,
+    maxWidth: 110,
     maxHeight: 50
   },
   details: {
@@ -96224,8 +96226,9 @@ var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/taggedCards.js";
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     display: 'flex',
-    maxWidth: 100,
-    maxHeight: 50
+    maxWidth: 110,
+    maxHeight: 50,
+    padding: theme.spacing(1)
   },
   content: {
     flex: '1 0 auto'
@@ -96239,24 +96242,18 @@ function TaggedCards(props) {
   const classes = useStyles();
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.root,
-    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["CardContent"], {
-      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        className: classes.title,
-        color: "textSecondary",
-        children: props.tagName
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 31,
-        columnNumber: 17
-      }, this)
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: classes.title,
+      color: "textSecondary",
+      children: props.tagName
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 30,
-      columnNumber: 13
+      lineNumber: 32,
+      columnNumber: 17
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 29,
+    lineNumber: 30,
     columnNumber: 9
   }, this);
 }
@@ -96373,20 +96370,20 @@ class Tags extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "From this article"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 76,
+        lineNumber: 77,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_currentTagPaper__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tagArray: this.state.tags
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 81,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_Backend_apiCall__WEBPACK_IMPORTED_MODULE_3__["default"], {
         getTags: this.getTags,
         tags: this.state.tags
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 83,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
@@ -96429,19 +96426,17 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
     display: 'flex'
   },
   container: {
+    minWidth: "103%",
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4)
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'row',
     flexWrap: 'wrap',
     height: 'auto'
-  },
-  fixedHeight: {
-    height: 240
   }
 }));
 function TagsPaper(props) {
@@ -96453,7 +96448,7 @@ function TagsPaper(props) {
       children: "None Yet. Start Following Tags!"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 35,
       columnNumber: 20
     }, this);
   } else {
@@ -96467,12 +96462,12 @@ function TagsPaper(props) {
           tagName: e
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 42,
           columnNumber: 69
         }, this)
       }, e, false, {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 42,
         columnNumber: 14
       }, this);
     });
@@ -96491,22 +96486,22 @@ function TagsPaper(props) {
           children: showTagCards
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 58,
+          lineNumber: 54,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 53,
         columnNumber: 13
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 51,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 50,
+    lineNumber: 48,
     columnNumber: 5
   }, this);
 }

@@ -8,8 +8,9 @@ import { CardContent } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        maxWidth: 100,
-        maxHeight: 50
+        maxWidth: 110,
+        maxHeight: 50,
+        padding: theme.spacing(1),
     },
     content: {
         flex: '1 0 auto',
@@ -27,12 +28,11 @@ export default function TaggedCards(props) {
 
     return (
         <Card className={classes.root}>
-            <CardContent>
+            
                 <Typography className={classes.title} color="textSecondary">
                     {props.tagName}
                     {/* Pass in props here */}
                 </Typography>
-            </CardContent>
 
         </Card>
     );

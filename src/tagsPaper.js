@@ -5,27 +5,25 @@ import Paper from '@material-ui/core/Paper';
 import TaggedCards from './taggedCards';
 
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
   container: {
+    minWidth:"103%",
+
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'row',
     flexWrap: 'wrap',
     height: 'auto'
   },
-  fixedHeight: {
-    height: 240,
-  },
+  
 }));
 
 
@@ -51,8 +49,6 @@ export default function TagsPaper(props) {
       
 
         <Container maxWidth="lg" className={classes.container}>
-          
-
             {/* From this article */}
             <Grid item xs={11}>
               <Paper className={classes.paper}>

@@ -18,6 +18,7 @@ if (month<=10){
     month = '0' + month;
 }
 let siteurl = 'https://www.dealstreetasia.com/sitemap-posttype-stories.'+ year+month +'.xml'
+// let siteurl = 'https://www.dealstreetasia.com/sitemap-posttype-stories.202103.xml'
 
 let savedTags;
 
@@ -40,19 +41,30 @@ const getPostTags = async () => {
         throw error;
     }
 };
-
+async function fetchHTML(u) {
+    const { data } = await axios.get(u)
+    return cheerio.load(data)
+  }
+  
 const getAllURLLink = async () =>{
-    
+
     try{
-        const { data } = await axios.get(siteurl);
-        const $ = cheerio.load(data);
-        const urlLinks = [];
-        $('.a').each((_idx, element) => {
-            const urlLink = $(element).text()
-            urlLinks.push(urlLink)
-        });
-        console.log(urlLinks)
+        const $ = await fetchHTML(siteurl)
+        console.log(`Site HTML: ${$.html()}\n\n`)
+        // const { data } = await axios.get(siteurl);
+        // const $ = cheerio.load(data);
+        let urlLinks = ["empty"];
+        // let temp = $('.high').children().find('td')
+        // console.log((temp[0]));
         return urlLinks;
+        // const urlLinks = [];
+        // $('a').each((_idx, element) => {
+        //     console.log(element)
+        //     const urlLink = $(element).text()
+        //     urlLinks.push(urlLink)
+        // });
+        // console.log(urlLinks)
+        // return urlLinks;
     }
     catch (error) {
         throw error;
@@ -88,7 +100,7 @@ app.post('/api/getReco', (req, res) => {
     
     savedTags = req.body.tags
     console.log(savedTags);
-    getAllURLLink().then((urlLinks) => {console.log(urlLinks);})
+    getAllURLLink();
     res.send(
         `I received your POST request. This is what you sent me: ${req.body.post}`,
     );
