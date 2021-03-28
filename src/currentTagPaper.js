@@ -11,15 +11,19 @@ import TagCards from './tagCards';
 
 function Copyright() {
   return (
+    <div>
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {'Copyright © 2021'}
       <Link color="inherit" href="https://www.dealstreetasia.com">
-        NTU and Deal Street Asia
+      Deal Street Asia and
       </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      
+      
     </Typography>
+    <img src={"images/NMLogo.png"} style={{ paddingLeft:"30%", paddingTop:"5px" }} className="App-logo" alt="logo" />
+    </div>
   );
+
 }
 
 
