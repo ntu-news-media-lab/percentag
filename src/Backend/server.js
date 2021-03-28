@@ -50,7 +50,7 @@ const getAllURLLink = async () =>{
 
     try{
         const $ = await fetchHTML(siteurl)
-        console.log(`Site HTML: ${$.html()}\n\n`)
+        // console.log(`Site HTML: ${$.html()}\n\n`)
         // const { data } = await axios.get(siteurl);
         // const $ = cheerio.load(data);
         let urlLinks = ["empty"];

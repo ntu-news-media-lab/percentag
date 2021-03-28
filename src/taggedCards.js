@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -26,12 +27,28 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
+function removeTag(tagName){
+    let tempArray = [];
+   
+    chrome.storage.local.get(['tags'], function (result) {
+        // console.log("retrieved tags is" + result.tags);
+        tempArray = result.tags;
+       
+        tempArray = tempArray.filter(item => item !== tagName);
+        console.log("test" + tempArray)
+        chrome.storage.local.set({ tags: tempArray }, function () {
+            console.log("saved: " + tempArray);
+        })
+    });
+    window.location.reload(true);
+  }
+
 export default function TaggedCards(props) {
     const classes = useStyles();
 
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} onDoubleClick={()=>{ removeTag(props.tagName)}}>
             
                 <Typography className={classes.title} color="textSecondary">
                     {props.tagName}

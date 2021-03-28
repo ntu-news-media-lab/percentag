@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c1e4a847c0749b4c3e2e";
+/******/ 	var hotCurrentHash = "cc3173e9d3fa4146ddfc";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -11765,9 +11765,9 @@ console.log("inside bg script"); // let savedTags = ["Stripe", "Investment"];
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/xavier/Programming/React/watchr2/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
-__webpack_require__(/*! /Users/xavier/Programming/React/watchr2/node_modules/webpack-dev-server/client/index.js?http://localhost:4000 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:4000");
-module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/watchr2/src/background/index.js */"./src/background/index.js");
+__webpack_require__(/*! /Users/xavier/Programming/React/percentag/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
+__webpack_require__(/*! /Users/xavier/Programming/React/percentag/node_modules/webpack-dev-server/client/index.js?http://localhost:4000 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:4000");
+module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/percentag/src/background/index.js */"./src/background/index.js");
 
 
 /***/ })

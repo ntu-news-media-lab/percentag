@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c1e4a847c0749b4c3e2e";
+/******/ 	var hotCurrentHash = "cc3173e9d3fa4146ddfc";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95120,7 +95120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recommend__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./recommend */ "./src/recommend.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/App.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/App.js";
 
 
 
@@ -95301,7 +95301,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/Backend/apiCall.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/Backend/apiCall.js";
 
 /*global chrome*/
 
@@ -95403,7 +95403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tagCards__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./tagCards */ "./src/tagCards.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/currentTagPaper.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/currentTagPaper.js";
 
 
 
@@ -95651,7 +95651,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reportWebVitals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reportWebVitals */ "./src/reportWebVitals.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/index.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/index.js";
 
 
 
@@ -95695,7 +95695,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recommendCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./recommendCards */ "./src/recommendCards.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recomPaper.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/recomPaper.js";
 
 
 
@@ -95735,11 +95735,29 @@ function RecomPaper(props) {
       columnNumber: 21
     }, this);
   } else {
-    showRecommend = /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 21
-    }, this);
+    showRecommend = props.recommendation.map(e => {
+      return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommendCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          recoCardTitle: e.title,
+          recoCardImg: e.img,
+          recoCardDate: e.date,
+          recoCardMatch: e.match,
+          recoCardUrl: e.url
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 34
+        }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 162
+        }, this)]
+      }, e.title, true, {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 14
+      }, this);
+    });
   }
 
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
@@ -95755,52 +95773,30 @@ function RecomPaper(props) {
           xs: 12,
           children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: classes.paper,
-            children: [showRecommend, props.recommendation.map(e => {
-              return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
-                children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_recommendCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                  recoCardTitle: e.title,
-                  recoCardImg: e.img,
-                  recoCardDate: e.date,
-                  recoCardMatch: e.match,
-                  recoCardUrl: e.url
-                }, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 55,
-                  columnNumber: 46
-                }, this), " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("br", {}, void 0, false, {
-                  fileName: _jsxFileName,
-                  lineNumber: 55,
-                  columnNumber: 174
-                }, this)]
-              }, e.title, true, {
-                fileName: _jsxFileName,
-                lineNumber: 55,
-                columnNumber: 26
-              }, this);
-            })]
-          }, void 0, true, {
+            children: showRecommend
+          }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 51,
+            lineNumber: 54,
             columnNumber: 15
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 50,
+          lineNumber: 53,
           columnNumber: 13
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 50,
         columnNumber: 11
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 49,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 43,
+    lineNumber: 46,
     columnNumber: 5
   }, this);
 }
@@ -95822,7 +95818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _recomPaper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recomPaper */ "./src/recomPaper.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommend.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/recommend.js";
 
 /*global chrome*/
 
@@ -95849,12 +95845,19 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     };
 
     this.state = {
-      recommended: [{
-        title: "Stripe's value huts $95B",
-        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
+      recommended: [// {title: ""},
+      {
+        title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
+        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528z",
         date: Date().toLocaleString(),
         match: 95,
-        url: "https://www.dealstreetasia.com/stories/stripe-fundraising-231986/"
+        url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
+      }, {
+        title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
+        img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
+        date: Date().toLocaleString(),
+        match: 75,
+        url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
       }, {
         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
@@ -95896,24 +95899,24 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 76,
+        lineNumber: 84,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 77,
+        lineNumber: 85,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 88,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 83,
       columnNumber: 13
     }, this);
   }
@@ -95941,7 +95944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "./node_modules/@material-ui/core/esm/CardMedia/index.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/recommendCards.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/recommendCards.js";
 
 
 
@@ -96138,7 +96141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tagCards.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/tagCards.js";
 
 /*global chrome*/
 
@@ -96180,27 +96183,21 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
 
 function saveTag(tagName) {
   let tagArray = [];
-  chrome.storage.local.get({
-    tags: []
-  }, function (result) {
-    var tags = result.tag;
+  chrome.storage.local.get(['tags'], function (result) {
+    var tags = result.tags; // if (typeof tags === "undefined") {
+    //   tagArray.push(tagName);
+    //   chrome.storage.local.set({ tags: tagArray }, function () {
+    //     console.log('Value is set to ' + tagArray);
+    //   });
+    // } else {
 
-    if (typeof tags === "undefined") {
-      tagArray.push(tagName);
-      chrome.storage.local.set({
-        tags: tagArray
-      }, function () {
-        console.log('Value is set to ' + tagArray);
-      });
-    } else {
-      let tempArray = [...tags];
-      tempArray.push(tagName);
-      chrome.storage.local.set({
-        tags: tempArray
-      }, function () {
-        tempArray.map(e => console.log(e));
-      });
-    }
+    tagArray = [...tags];
+    tagArray.push(tagName);
+    chrome.storage.local.set({
+      tags: tagArray
+    }, function () {
+      tagArray.map(e => console.log(e));
+    }); // }
   });
 }
 
@@ -96218,7 +96215,7 @@ function TagCards(props) {
           children: props.tagName
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 71,
           columnNumber: 11
         }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
           "aria-label": "play/pause",
@@ -96227,27 +96224,27 @@ function TagCards(props) {
             className: classes.addIcon
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 75,
+            lineNumber: 76,
             columnNumber: 13
           }, this)
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 74,
+          lineNumber: 75,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 9
       }, this)
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 7
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 67,
+    lineNumber: 68,
     columnNumber: 5
   }, this);
 }
@@ -96271,7 +96268,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/taggedCards.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/taggedCards.js";
+
+/*global chrome*/
 
 
 
@@ -96296,22 +96295,42 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     fontWeight: "600"
   }
 }));
+
+function removeTag(tagName) {
+  let tempArray = [];
+  chrome.storage.local.get(['tags'], function (result) {
+    // console.log("retrieved tags is" + result.tags);
+    tempArray = result.tags;
+    tempArray = tempArray.filter(item => item !== tagName);
+    console.log("test" + tempArray);
+    chrome.storage.local.set({
+      tags: tempArray
+    }, function () {
+      console.log("saved: " + tempArray);
+    });
+  });
+  window.location.reload(true);
+}
+
 function TaggedCards(props) {
   const classes = useStyles();
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.root,
+    onDoubleClick: () => {
+      removeTag(props.tagName);
+    },
     children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: classes.title,
       color: "textSecondary",
       children: props.tagName
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 53,
       columnNumber: 17
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 34,
+    lineNumber: 51,
     columnNumber: 9
   }, this);
 }
@@ -96335,7 +96354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Backend_apiCall__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Backend/apiCall */ "./src/Backend/apiCall.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tags.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/tags.js";
 
 /*global chrome*/
 
@@ -96472,7 +96491,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taggedCards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./taggedCards */ "./src/taggedCards.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/xavier/Programming/React/watchr2/src/tagsPaper.js";
+var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/tagsPaper.js";
 
 
 
@@ -96573,9 +96592,9 @@ function TagsPaper(props) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/xavier/Programming/React/watchr2/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
-__webpack_require__(/*! /Users/xavier/Programming/React/watchr2/node_modules/webpack-dev-server/client/index.js?http://localhost:4000 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:4000");
-module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/watchr2/src/index.js */"./src/index.js");
+__webpack_require__(/*! /Users/xavier/Programming/React/percentag/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
+__webpack_require__(/*! /Users/xavier/Programming/React/percentag/node_modules/webpack-dev-server/client/index.js?http://localhost:4000 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:4000");
+module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/percentag/src/index.js */"./src/index.js");
 
 
 /***/ })

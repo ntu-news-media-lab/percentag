@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c1e4a847c0749b4c3e2e";
+/******/ 	var hotCurrentHash = "cc3173e9d3fa4146ddfc";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1563,8 +1563,8 @@ function printAllPageLinks() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/xavier/Programming/React/watchr2/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
-module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/watchr2/src/contentScript/index.js */"./src/contentScript/index.js");
+__webpack_require__(/*! /Users/xavier/Programming/React/percentag/node_modules/webpack/hot/dev-server.js */"./node_modules/webpack/hot/dev-server.js");
+module.exports = __webpack_require__(/*! /Users/xavier/Programming/React/percentag/src/contentScript/index.js */"./src/contentScript/index.js");
 
 
 /***/ })

@@ -35,7 +35,10 @@ export default function RecomPaper(props) {
     </i>
   }
   else{
-    showRecommend = <br/>
+    showRecommend = props.recommendation.map((e)=>{
+                  
+      return <div key={e.title} ><RecommendCards recoCardTitle={e.title} recoCardImg={e.img} recoCardDate={e.date} recoCardMatch={e.match} recoCardUrl={e.url}/> <br/></div>
+    })
   }
  
 
@@ -50,10 +53,7 @@ export default function RecomPaper(props) {
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                   {showRecommend}
-                  {props.recommendation.map((e)=>{
                   
-                  return <div key={e.title} ><RecommendCards recoCardTitle={e.title} recoCardImg={e.img} recoCardDate={e.date} recoCardMatch={e.match} recoCardUrl={e.url}/> <br/></div>
-                })}
                   
               </Paper>
             </Grid>
