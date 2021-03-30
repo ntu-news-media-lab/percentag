@@ -11,16 +11,16 @@ export default class Recommend extends Component {
                     // {title: ""},
                     {   
                         title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
-                        img:"https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528z",
+                        img:"https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
                         date: Date().toLocaleString(),
-                        match: 95,
+                        match: 93,
                         url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
                     },
                     {   
                         title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
                         img:"https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
                         date: Date().toLocaleString(),
-                        match: 75,
+                        match: 77,
                         url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
                     },
                     {

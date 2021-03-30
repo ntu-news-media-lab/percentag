@@ -10,17 +10,19 @@ import TagCards from './tagCards';
 
 
 function Copyright() {
+  const classes = useStyles();
   return (
-    <div>
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © 2021'}
+    <div style={{paddingRight:"20px", paddingTop:"30px"}}>
+    <Typography className={classes.title} color="textSecondary" align="left" >
+      {'Copyright © 2021 '}
+      <img src={"images/NMLogo.png"} style={{width:"30px", padding:"2px"}} className="App-logo" alt="logo" />
+      {'and '}
       <Link color="inherit" href="https://www.dealstreetasia.com">
-      Deal Street Asia and
-      </Link>{' '}
-      
-      
+       DealStreetAsia  
+      </Link>
+     
     </Typography>
-    <img src={"images/NMLogo.png"} style={{ paddingLeft:"30%", paddingTop:"5px" }} className="App-logo" alt="logo" />
+    
     </div>
   );
 
@@ -47,6 +49,12 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  title: {
+    fontSize: 12,
+    
+    color: "grey",
+    fontWeight: "600"
+},
 }));
 
 export default function CurrentTagPaper(props) {

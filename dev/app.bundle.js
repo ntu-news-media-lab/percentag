@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "cc3173e9d3fa4146ddfc";
+/******/ 	var hotCurrentHash = "1762956ea1d37d4ee132";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95416,40 +95416,45 @@ var _jsxFileName = "/Users/xavier/Programming/React/percentag/src/currentTagPape
 
 
 function Copyright() {
+  const classes = useStyles();
   return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("div", {
-    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      variant: "body2",
+    style: {
+      paddingRight: "20px",
+      paddingTop: "30px"
+    },
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: classes.title,
       color: "textSecondary",
-      align: "center",
-      children: ['Copyright © 2021', /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        color: "inherit",
-        href: "https://www.dealstreetasia.com",
-        children: "Deal Street Asia and"
+      align: "left",
+      children: ['Copyright © 2021 ', /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("img", {
+        src: "images/NMLogo.png",
+        style: {
+          width: "30px",
+          padding: "2px"
+        },
+        className: "App-logo",
+        alt: "logo"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 7
-      }, this), ' ']
+      }, this), 'and ', /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        color: "inherit",
+        href: "https://www.dealstreetasia.com",
+        children: "DealStreetAsia"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 7
+      }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 5
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])("img", {
-      src: "images/NMLogo.png",
-      style: {
-        paddingLeft: "30%",
-        paddingTop: "5px"
-      },
-      className: "App-logo",
-      alt: "logo"
-    }, void 0, false, {
-      fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 5
-    }, this)]
-  }, void 0, true, {
+    }, this)
+  }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 14,
+    lineNumber: 15,
     columnNumber: 5
   }, this);
 }
@@ -95473,6 +95478,11 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   },
   fixedHeight: {
     height: 240
+  },
+  title: {
+    fontSize: 12,
+    color: "grey",
+    fontWeight: "600"
   }
 }));
 function CurrentTagPaper(props) {
@@ -95496,44 +95506,44 @@ function CurrentTagPaper(props) {
                 tagName: e
               }, void 0, false, {
                 fileName: _jsxFileName,
-                lineNumber: 67,
+                lineNumber: 75,
                 columnNumber: 61
               }, this)
             }, e, false, {
               fileName: _jsxFileName,
-              lineNumber: 67,
+              lineNumber: 75,
               columnNumber: 26
             }, this);
           })
         }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 62,
+          lineNumber: 70,
           columnNumber: 15
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 69,
         columnNumber: 13
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
         pt: 4,
         children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_9__["jsxDEV"])(Copyright, {}, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 74,
+          lineNumber: 82,
           columnNumber: 13
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 81,
         columnNumber: 11
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 67,
       columnNumber: 9
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName,
-    lineNumber: 58,
+    lineNumber: 66,
     columnNumber: 5
   }, this);
 }
@@ -95848,15 +95858,15 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       recommended: [// {title: ""},
       {
         title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
-        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528z",
+        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
         date: Date().toLocaleString(),
-        match: 95,
+        match: 93,
         url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
       }, {
         title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
         img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
         date: Date().toLocaleString(),
-        match: 75,
+        match: 77,
         url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
       }, {
         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
