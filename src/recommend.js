@@ -9,16 +9,16 @@ export default class Recommend extends Component {
             recommended:
                 [
                     // {title: ""},
-                    {   
+                    {
                         title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
-                        img:"https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
+                        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
                         date: Date().toLocaleString(),
                         match: 93,
                         url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
                     },
-                    {   
+                    {
                         title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
-                        img:"https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
+                        img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
                         date: Date().toLocaleString(),
                         match: 77,
                         url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
@@ -32,20 +32,59 @@ export default class Recommend extends Component {
                     }
                 ],
             savedTags: [],
-        };        
+        };
         this.getRecommendation = this.getRecommendation.bind(this);
+        // this.getTag = this.getTag(this);
     }
     componentDidMount() {
+
         let newThis = this;
         chrome.storage.local.get(['tags'], function (result) {
             newThis.setState({
                 savedTags: result.tags
             })
-            newThis.getRecommendation();
+            // newThis.getRecommendation();
+            newThis.fakeUpdateRecommendation();
         });
-        
     }
-    
+
+    fakeUpdateRecommendation = async () => {
+        if (Array.isArray(this.state.savedTags) && this.state.savedTags.length === 0) {
+            return this.setState({
+                recommended: [{ title: "" }],
+                savedTags: [],
+            })
+        }
+        else {
+            return this.setState({
+                recommended:
+                    [
+                        {
+                            title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
+                            img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
+                            date: Date().toLocaleString(),
+                            match: 93,
+                            url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
+                        },
+                        {
+                            title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
+                            img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
+                            date: Date().toLocaleString(),
+                            match: 77,
+                            url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
+                        },
+                        {
+                            title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
+                            img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
+                            date: Date().toLocaleString(),
+                            match: 65,
+                            url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
+                        }
+                    ],
+            })
+        }
+    }
+
     getRecommendation = async () => {
         console.log("savedTages in recommend to be send:" + this.state.savedTags);
         const response = await fetch('http://localhost:5000/api/getReco', {
@@ -53,7 +92,7 @@ export default class Recommend extends Component {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 tags: this.state.savedTags,
             }),
         });

@@ -35,7 +35,7 @@ function removeTag(tagName){
         tempArray = result.tags;
        
         tempArray = tempArray.filter(item => item !== tagName);
-        console.log("test" + tempArray)
+        // console.log("test" + tempArray)
         chrome.storage.local.set({ tags: tempArray }, function () {
             console.log("saved: " + tempArray);
         })
