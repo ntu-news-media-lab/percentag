@@ -43,8 +43,8 @@ export default class Recommend extends Component {
             newThis.setState({
                 savedTags: result.tags
             })
-            newThis.getRecommendation();
-            // newThis.fakeUpdateRecommendation();
+            // newThis.getRecommendation();
+            newThis.fakeUpdateRecommendation();
         });
     }
 

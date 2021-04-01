@@ -79,7 +79,7 @@ const getAllURLLink = async () => {
 }
 
 const getMatch = async () => {
-    
+
     try {
         urlArr.forEach(link => {
             getNewsTitle(link).then(
@@ -162,10 +162,12 @@ app.post('/api/scrap', (req, res) => {
 app.post('/api/getReco', async (req, res) => {
     savedTags = req.body.tags
     console.log(savedTags);
-    await getMatch().then(
-        (result) => console.log(result)
-    )
-   
+    // getMatch();
+
+    res.send(
+        { _idx, scores })
+
+
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
