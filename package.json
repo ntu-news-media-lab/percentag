@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "got": "^11.8.2",
     "jssoup": "0.0.12",
+    "natural": "^5.0.2",
     "react": "^17.0.1",
     "react-browser-extension-scripts": "4.0.10",
     "react-dom": "^17.0.1",

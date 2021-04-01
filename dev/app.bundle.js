@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b0a598d42caae310c062";
+/******/ 	var hotCurrentHash = "a203a09c4ee3ee8ed733";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95918,49 +95918,35 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     chrome.storage.local.get(['tags'], function (result) {
       newThis.setState({
         savedTags: result.tags
-      }); // newThis.getRecommendation();
-
-      newThis.fakeUpdateRecommendation();
+      });
+      newThis.getRecommendation(); // newThis.fakeUpdateRecommendation();
     });
   }
 
-  // getTagApi() {
-  //     this.callApiGetTag()
-  //         .then(res => { 
-  //             this.setState({ savedTags: res.express }) 
-  //         })
-  //         .catch(err => console.log(err));
-  // }
-  // callApiGetTag = async () => {
-  //     const response = await fetch('http://localhost:5000/api/getTags');
-  //     const body = await response.json();
-  //     if (response.status !== 200) throw Error(body.message);
-  //     return body;
-  //   };
   render() {
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
       children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("p", {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 123,
+        lineNumber: 107,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 124,
+        lineNumber: 108,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 127,
+        lineNumber: 111,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 106,
       columnNumber: 13
     }, this);
   }

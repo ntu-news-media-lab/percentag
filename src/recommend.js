@@ -43,8 +43,8 @@ export default class Recommend extends Component {
             newThis.setState({
                 savedTags: result.tags
             })
-            // newThis.getRecommendation();
-            newThis.fakeUpdateRecommendation();
+            newThis.getRecommendation();
+            // newThis.fakeUpdateRecommendation();
         });
     }
 
@@ -100,22 +100,6 @@ export default class Recommend extends Component {
         if (response.status !== 200) throw Error(body.message);
         return body;
     };
-
-    // getTagApi() {
-    //     this.callApiGetTag()
-    //         .then(res => { 
-    //             this.setState({ savedTags: res.express }) 
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-    // callApiGetTag = async () => {
-    //     const response = await fetch('http://localhost:5000/api/getTags');
-    //     const body = await response.json();
-    //     if (response.status !== 200) throw Error(body.message);
-
-    //     return body;
-    //   };
-
 
     render() {
         return (
