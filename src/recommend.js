@@ -10,6 +10,7 @@ export default class Recommend extends Component {
                 [
                     // {title: ""},
                     {
+                        index:0,
                         title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
                         img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
                         date: Date().toLocaleString(),
@@ -17,6 +18,7 @@ export default class Recommend extends Component {
                         url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
                     },
                     {
+                        index:1,
                         title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
                         img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
                         date: Date().toLocaleString(),
@@ -24,6 +26,7 @@ export default class Recommend extends Component {
                         url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
                     },
                     {
+                        index:2,
                         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
                         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
                         date: Date().toLocaleString(),
@@ -32,6 +35,7 @@ export default class Recommend extends Component {
                     }
                 ],
             savedTags: [],
+            resultScore: [],
         };
         this.getRecommendation = this.getRecommendation.bind(this);
         // this.getTag = this.getTag(this);
@@ -43,8 +47,9 @@ export default class Recommend extends Component {
             newThis.setState({
                 savedTags: result.tags
             })
-            // newThis.getRecommendation();
             newThis.fakeUpdateRecommendation();
+            newThis.getRecommendation();
+            
         });
     }
 
@@ -58,48 +63,82 @@ export default class Recommend extends Component {
         else {
             return this.setState({
                 recommended:
-                    [
-                        {
-                            title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
-                            img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
-                            date: Date().toLocaleString(),
-                            match: 93,
-                            url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
-                        },
-                        {
-                            title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
-                            img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
-                            date: Date().toLocaleString(),
-                            match: 77,
-                            url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
-                        },
-                        {
-                            title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
-                            img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
-                            date: Date().toLocaleString(),
-                            match: 65,
-                            url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
-                        }
-                    ],
+                [
+                    // {title: ""},
+                    {
+                        index:0,
+                        title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
+                        img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
+                        date: Date().toLocaleString(),
+                        match: 93,
+                        url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
+                    },
+                    {
+                        index:1,
+                        title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
+                        img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
+                        date: Date().toLocaleString(),
+                        match: 77,
+                        url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
+                    },
+                    {
+                        index:2,
+                        title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
+                        img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
+                        date: Date().toLocaleString(),
+                        match: 65,
+                        url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
+                    }
+                ],
             })
         }
     }
 
     getRecommendation = async () => {
         console.log("savedTages in recommend to be send:" + this.state.savedTags);
-        const response = await fetch('http://localhost:5000/api/getReco', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                tags: this.state.savedTags,
-            }),
-        });
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        return body;
+        let recommendArr = this.state.recommended
+        
+        recommendArr.map(async (recoObj, _idx) => {
+            const response = await fetch('http://localhost:5000/api/getReco', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    tags: this.state.savedTags,
+                    title: recoObj.title,
+                }),
+            });
+            const body = await response.json();
+            if (response.status !== 200) throw Error(body.message);
+            console.log(body.express[0])
+            let tempState = {
+                index: _idx, 
+                score: body.express[0]
+            }
+    
+            this.setState({
+                resultScore: [...this.state.resultScore, tempState]
+            })
+            console.log(this.state.resultScore)
+            this.updateMatchingPercentage();
+        })
+        
     };
+    updateMatchingPercentage (){
+        let newResult = this.state.resultScore;
+        let tempState = this.state.recommended;
+        newResult.map((obj)=>{
+            let index = obj.index;
+            tempState.map(
+                (recoObj)=>{
+                    if(recoObj.index === index){
+                        recoObj.match = (obj.score*100*2.1).toFixed(2);
+                    }
+                }
+            )
+        })
+    }
 
     render() {
         return (

@@ -61,22 +61,21 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.getRecommendation = async () => {
       console.log("savedTages in recommend to be send:" + this.state.savedTags);
       let recommendArr = this.state.recommended;
-      let recommendUrl = [];
-      recommendArr.map(recoObj => {
-        recommendUrl.push(recoObj.url);
+      recommendArr.map(async recoObj => {
+        const response = await fetch('http://localhost:5000/api/getReco', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            tags: this.state.savedTags,
+            title: recoObj.title
+          })
+        });
+        const body = await response.json();
+        if (response.status !== 200) throw Error(body.message);
+        console.log(body.express);
       });
-      const response = await fetch('http://localhost:5000/api/getReco', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          tags: this.state.savedTags
-        })
-      });
-      const body = await response.json();
-      if (response.status !== 200) throw Error(body.message);
-      return body;
     };
 
     this.state = {
@@ -121,24 +120,24 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 112,
+        lineNumber: 115,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 113,
+        lineNumber: 116,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 119,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 114,
       columnNumber: 13
     }, this);
   }
@@ -148,4 +147,4 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /***/ })
 
 })
-//# sourceMappingURL=app.3a00d91b1fb2c7c44d6e.hot-update.js.map
+//# sourceMappingURL=app.7205bd9bf83fde0ff144.hot-update.js.map

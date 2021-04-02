@@ -9,12 +9,11 @@ const port = process.env.PORT || 5000;
 let tags;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 var d = new Date();
 var year = d.getFullYear().toString();
 var month = d.getMonth();
-var savedTags;
+var savedTags = [];
+let scoreArr = [];
 month = month + 1;
 if (month <= 10) {
     month = '0' + month;
@@ -28,7 +27,7 @@ let url1 = 'https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604
 let url2 = 'https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/'
 let url3 = 'https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/'
 const urlArr = [url1, url2, url3];
-var tempResults;
+
 //get tags from DSA news web
 const getPostTags = async () => {
     try {
@@ -78,27 +77,20 @@ const getAllURLLink = async () => {
     }
 }
 
-const getMatch = async () => {
+const getMatch = () => {  
+    urlArr.forEach((link) => {
+        getNewsTitle(link).then(
+             (doc) => {
+                matchAlgo(doc).then(
+                    (score) => {
 
-    try {
-        urlArr.forEach(link => {
-            getNewsTitle(link).then(
-                (title) => {
-                    matchAlgo(title).then(
-                        (scores) => {
-                            tempResults = scores;
-                        }
-                    )
-                }
-            )
-        })
-    }
-    catch (e) {
-        throw e;
-    }
-
+                        scoreArr.push(score)
+                        
+                    });
+            });
+    });
 }
-
+// match tags (seperated by space if multiple) to each document
 const matchAlgo = async (document) => {
     var scores = [];
     const TfIdf = natural.TfIdf
@@ -110,8 +102,6 @@ const matchAlgo = async (document) => {
             scores.push(measure);
         })
     });
-
-
     // console.log('your tag here --------------------------------')
     // tfidf.tfidfs('<tag>', function (i, measure) {
     //     console.log('document #' + i + ' is ' + measure)
@@ -142,7 +132,7 @@ const getNewsTitle = async (link) => {
         );
         const $ = cheerio.load(data);
         const title = $("h1:first").text()
-        // console.log(title)
+        console.log(title)
         return title;
     }
     catch (error) {
@@ -158,16 +148,22 @@ app.post('/api/scrap', (req, res) => {
     res.send({ express: tags });
 });
 
+// var getScoreArr = new Promise((resolve, reject) => {
+
+// });
 
 app.post('/api/getReco', async (req, res) => {
-    savedTags = req.body.tags
-    console.log(savedTags);
-    // getMatch();
+    
+    savedTags = req.body.tags;
+    let titleToMatch = req.body.title;
+    console.log(titleToMatch);
+    matchAlgo(titleToMatch).then(
+        (score) => {
 
-    res.send(
-        { _idx, scores })
-
-
+            res.send({express: score})
+            
+        });
+    
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -61,22 +61,30 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.getRecommendation = async () => {
       console.log("savedTages in recommend to be send:" + this.state.savedTags);
       let recommendArr = this.state.recommended;
-      let recommendUrl = [];
-      recommendArr.map(recoObj => {
-        recommendUrl.push(recoObj.url);
+      recommendArr.map(async (recoObj, _idx) => {
+        const response = await fetch('http://localhost:5000/api/getReco', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            tags: this.state.savedTags,
+            title: recoObj.title
+          })
+        });
+        const body = await response.json();
+        if (response.status !== 200) throw Error(body.message);
+        console.log(body.express[0]);
+        let tempState = {
+          index: _idx,
+          score: body.express[0]
+        };
+        this.setState({
+          resultScore: [...this.state.resultScore, tempState]
+        });
+        console.log(this.state.resultScore);
+        this.updateMatchingPercentage();
       });
-      const response = await fetch('http://localhost:5000/api/getReco', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          tags: this.state.savedTags
-        })
-      });
-      const body = await response.json();
-      if (response.status !== 200) throw Error(body.message);
-      return body;
     };
 
     this.state = {
@@ -100,7 +108,8 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         match: 65,
         url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
       }],
-      savedTags: []
+      savedTags: [],
+      resultScore: []
     };
     this.getRecommendation = this.getRecommendation.bind(this); // this.getTag = this.getTag(this);
   }
@@ -115,30 +124,33 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
   }
 
+  updateMatchingPercentage() {// let tempState = this.state.recommendation();
+  }
+
   render() {
     return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
       children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("p", {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 112,
+        lineNumber: 128,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 113,
+        lineNumber: 129,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 132,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 127,
       columnNumber: 13
     }, this);
   }
@@ -148,4 +160,4 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /***/ })
 
 })
-//# sourceMappingURL=app.3a00d91b1fb2c7c44d6e.hot-update.js.map
+//# sourceMappingURL=app.f9c543790619f0fb6f6a.hot-update.js.map
