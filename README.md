@@ -69,7 +69,7 @@ cd src/Backend </br>
 
 # Usage
 <li>
-    <ul> 1.Go to any article from Dealstreatasia's website 
+    <ul> 1.Go to any article from Dealstreatasia's website </ul>
     <ul> 2. Use percentag to save any tags you like at the tags tab</ul>
     <ul> 3. Go to recommended tab to find recommended articles curated just for you</ul>
 </li>
@@ -79,9 +79,9 @@ cd src/Backend </br>
 We hope to improve the product through further iterations: <br>
 
 <li>
-    <ul>Create affiliate links to improve tracking.
-    <ul>Becoming a news aggregator side where recommended articles would come from many different news website
-    <ul> Sorting feature: By news outlet, by region
+    <ul>Create affiliate links to improve tracking.</ul>
+    <ul>Becoming a news aggregator side where recommended articles would come from many different news website</ul>
+    <ul> Sorting feature: By news outlet, by region</ul>
 </li>
 
 # Demo video
