@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ecfc3d80f5fc0e660adc";
+/******/ 	var hotCurrentHash = "a29b75f612f526430281";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -95853,22 +95853,22 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             index: 0,
             title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
             img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
-            date: Date().toLocaleString(),
+            date: "Feb 2021",
             match: 93,
             url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
           }, {
             index: 1,
             title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
             img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
-            date: Date().toLocaleString(),
+            date: "Feb 2021",
             match: 77,
             url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
           }, {
             index: 2,
             title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
             img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
-            date: Date().toLocaleString(),
-            match: 65,
+            date: "Mar 2021",
+            match: 40,
             url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
           }]
         });
@@ -95910,22 +95910,22 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         index: 0,
         title: "Former BoE governor Mark Carney joins board of digital payments firm Stripe",
         img: "https://cdn.dealstreetasia.com/uploads/2018/09/Stripe-e1613972852450.png?fit=1024,512?resize=940,528",
-        date: Date().toLocaleString(),
+        date: "Feb 2021",
         match: 93,
         url: "https://www.dealstreetasia.com/stories/boe-mark-carney-stripe-228604/"
       }, {
         index: 1,
         title: "Asia Digest: Mars Growth invests $4m in Hiver; Stripe backs Safepay",
         img: "https://cdn.dealstreetasia.com/uploads/2015/12/money-currency-investment-dollars.jpg?fit=980,544?resize=940,528",
-        date: Date().toLocaleString(),
+        date: "Feb 2021",
         match: 77,
         url: "https://www.dealstreetasia.com/stories/mars-growth-hiver-strip-safepay-227585/"
       }, {
         index: 2,
         title: "BEENEXT, Qualgro invest in Vietnamese edtech startup Edmicro’s pre-Series A+ round",
         img: "https://cdn.dealstreetasia.com/uploads/2020/08/online-education-e1609923082605.png?fit=950,477?resize=940,528",
-        date: Date().toLocaleString(),
-        match: 65,
+        date: "Feb 2021",
+        match: 40,
         url: "https://www.dealstreetasia.com/stories/vietnam-edtech-edmicro-2m-232597/"
       }],
       savedTags: [],
@@ -95951,7 +95951,9 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     newResult.map(obj => {
       let index = obj.index;
       tempState.map(recoObj => {
-        if (recoObj.index === index) {
+        if (recoObj.index === index && index === 0) {
+          recoObj.match = (obj.score * 100 * 3.1).toFixed(2);
+        } else if (recoObj.index === index) {
           recoObj.match = (obj.score * 100 * 2.1).toFixed(2);
         }
       });
@@ -95964,24 +95966,24 @@ class Recommend extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         children: "Follow more tags to receive recommendations specific to your interest "
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 146,
+        lineNumber: 148,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("b", {
         children: "Recommended For You"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 147,
+        lineNumber: 149,
         columnNumber: 17
       }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(_recomPaper__WEBPACK_IMPORTED_MODULE_1__["default"], {
         recommendation: this.state.recommended
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 150,
+        lineNumber: 152,
         columnNumber: 17
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 147,
       columnNumber: 13
     }, this);
   }
