@@ -64,13 +64,13 @@ You will also see any lint errors in the console.
 ## Starting the backend server
 Open the terminal</br>
 cd src/Backend </br>
- $ node server.js
+    $ node server.js
 # Future Iterations
 We hope to improve the product through further iterations: 
 
 # Demo video
 Watch a demo here <br/>
-[!["Percentag demo"]](https://www.youtube.com)
+!["Percentag demo"](https://www.youtube.com)
 
 # Acknowledgements
 Ms Jessica Tan and Miss Joan Kelly for their guidance throughout the News Media Lab course. 
