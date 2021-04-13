@@ -47,15 +47,13 @@ If the installation was successful, you should be able to run the following comm
 
 
 # Getting started
-Download / Clone the file
-Use google chrome and type chrome://extensions in the extensions
-Allow Developer mode
-Press load unpacked and search for the file
-Activate the plugin
+Download / Clone the file </br>
+Use google chrome and type chrome://extensions in the extensions</br>
+Allow Developer mode</br>
+Press load unpacked and search for the file</br>
+Activate the plugin</br>
 
-
-
-### `yarn start`
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -63,17 +61,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+## Starting the backend server
+Open the terminal</br>
+cd src/Backend </br>
+### `node server.js`
+
 # Future Iterations
 We hope to improve the product through further iterations: 
 
 # Demo video
 Watch a demo here <br/>
-[!["Seekr demo"]](https://www.youtube.com)
+[!["Percentag demo"]](https://www.youtube.com)
 
 # Acknowledgements
 Ms Jessica Tan and Miss Joan Kelly for their guidance throughout the News Media Lab course. 
+Stephen Jacobs and the DealStreetAsia team for providing us with the resources, networks and know-hows to make this project a successful one.
+Alan soon and Rishad Patel from [Splice Media](https://splicemedia.com) for their mentoring and very insightful recommendations.
 
 # Team members
-Developers : Xavier, Tejas, Erica</br>
+Developers : Xavier, Tejas</br>
 Designers : Els, Erica</br>
 Jorunalists : Daphne, Peiwen, Shan</br>
