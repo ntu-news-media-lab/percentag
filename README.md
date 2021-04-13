@@ -46,7 +46,7 @@ If the installation was successful, you should be able to run the following comm
     6.1.0
 
 
-# Getting started
+# Setup / Getting started
 Download / Clone the file </br>
 Use google chrome and type chrome://extensions in the extensions</br>
 Allow Developer mode</br>
@@ -66,14 +66,24 @@ Open the terminal</br>
 cd src/Backend </br>
 
     $ node server.js
-    
+
+# Usage
+<li>
+    <ul> 1.Go to any article from Dealstreatasia's website 
+    <ul> 2. Use percentag to save any tags you like at the tags tab</ul>
+    <ul> 3. Go to recommended tab to find recommended articles curated just for you</ul>
+</li>
+
 
 # Future Iterations
 We hope to improve the product through further iterations: <br>
+
 <li>
-<ul>Create affiliate links to improve tracking.
-<ul>Allow users the ability to choose which news outlet they want to get recommendations from. 
+    <ul>Create affiliate links to improve tracking.
+    <ul>Becoming a news aggregator side where recommended articles would come from many different news website
+    <ul> Sorting feature: By news outlet, by region
 </li>
+
 # Demo video
 Watch a demo here <br/>
 !["Percentag demo"](https://www.youtube.com)
