@@ -68,11 +68,11 @@ cd src/Backend </br>
     $ node server.js
 
 # Usage
-<li>
-    <ul> 1.Go to any article from Dealstreatasia's website </ul>
-    <ul> 2. Use percentag to save any tags you like at the tags tab</ul>
-    <ul> 3. Go to recommended tab to find recommended articles curated just for you</ul>
-</li>
+<ul>
+    <li> 1.Go to any article from Dealstreatasia's website </li>
+    <li> 2. Use percentag to save any tags you like at the tags tab</li>
+    <li> 3. Go to recommended tab to find recommended articles curated just for you</li>
+</ul>
 
 
 # Future Iterations
@@ -86,11 +86,11 @@ We hope to improve the product through further iterations: <br>
 
 # Demo video
 Watch a demo here <br/>
-!["Percentag demo"](https://www.youtube.com)
+["Percentag demo"](https://www.youtube.com)
 
 # Acknowledgements
-Ms Jessica Tan and Miss Joan Kelly for their guidance throughout the News Media Lab course. 
-Stephen Jacobs and the DealStreetAsia team for providing us with the resources, networks and know-hows to make this project a successful one.
+Ms Jessica Tan and Miss Joan Kelly for their guidance throughout the News Media Lab course. </br>
+Stephen Jacobs and the DealStreetAsia team for providing us with the resources, networks and know-hows to make this project a successful one.</br>
 Alan soon and Rishad Patel from [Splice Media](https://splicemedia.com) for their mentoring and very insightful recommendations.
 
 # Team members
