@@ -86,7 +86,7 @@ We hope to improve the product through further iterations: <br>
 
 # Demo video
 Watch a demo here <br/>
-["Percentag demo"](https://www.youtube.com)
+["Percentag demo"](https://youtu.be/XMNvpR80F38)
 
 # Acknowledgements
 Ms Jessica Tan and Miss Joan Kelly for their guidance throughout the News Media Lab course. </br>
