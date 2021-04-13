@@ -69,8 +69,11 @@ cd src/Backend </br>
     
 
 # Future Iterations
-We hope to improve the product through further iterations: 
-
+We hope to improve the product through further iterations: <br>
+<li>
+<ul>Create affiliate links to improve tracking.
+<ul>Allow users the ability to choose which news outlet they want to get recommendations from. 
+</li>
 # Demo video
 Watch a demo here <br/>
 !["Percentag demo"](https://www.youtube.com)
