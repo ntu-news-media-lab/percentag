@@ -69,9 +69,9 @@ cd src/Backend </br>
 
 # Usage
 <ul>
-    <li> 1. Go to any article from Dealstreatasia's website </li>
-    <li> 2. Use percentag to save any tags you like at the tags tab</li>
-    <li> 3. Go to recommended tab to find recommended articles curated just for you</li>
+    <li>Go to any article from Dealstreatasia's website </li>
+    <li>Use percentag to save any tags you like at the tags tab</li>
+    <li>Go to recommended tab to find recommended articles curated just for you</li>
 </ul>
 
 
