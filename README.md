@@ -17,6 +17,10 @@ Percentag is a google chrome extension plugin that could be used in conjuction w
 5. Future Iterations
 6. Acknowledgements
 7. Team
+8. License and Attribution
+
+# Introduction
+The Percentag chrome extension is designed to help readers filter through the thousands of selections to get a better idea of what you'll like to read. Follow the set up instructions to enable the Percentag extension on your browser.
 
 # Requirements 
 For development, you will need Node.js and a node global package, Yarn, installed in your environement.
@@ -97,3 +101,11 @@ Alan soon and Rishad Patel from [Splice Media](https://splicemedia.com) for thei
 Developers : Xavier, Tejas</br>
 Designers : Els, Erica</br>
 Jorunalists : Daphne, Peiwen, Shan</br>
+
+# License and Attribution
+Percentag was developed as part of Nanyang Technological University’s News Media Lab curriculum. It is licensed under The MIT License, hence it is free and open-source.
+
+We encourage any and all budding innovators to use Percentag either commercially or for experimental pet projects. All that we kindly ask is that you retain the News Media Lab branding and display our logo within the product’s interface.
+
+Do reach out to us if you are interested in further contributing to Percentag, or if you wish to use Percentag for your organization/news media agency. We actively welcome anyone who is as keen as us to help turn the wonderful ideas of our students into reality.
+
