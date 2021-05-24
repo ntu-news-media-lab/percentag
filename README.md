@@ -107,5 +107,7 @@ Percentag was developed as part of Nanyang Technological University’s News Med
 
 We encourage any and all budding innovators to use Percentag either commercially or for experimental pet projects. All that we kindly ask is that you retain the News Media Lab branding and display our logo within the product’s interface.
 
-Do reach out to us if you are interested in further contributing to Percentag, or if you wish to use Percentag for your organization/news media agency. We actively welcome anyone who is as keen as us to help turn the wonderful ideas of our students into reality.
+Do reach out to us if you are interested in further contributing to Percentag, or if you wish to use Percentag for your organization/news media agency. We actively welcome anyone who is as keen as us to help turn the wonderful ideas of our students into reality. </br>
+
+This product is a seperate entity from DealStreetAsia, and DealStreetAsia is not responsible for the use or maintance of the product. </br>
 
